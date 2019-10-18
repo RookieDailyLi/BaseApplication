@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.compileVer.compileSdkVersion
+    buildToolsVersion rootProject.compileVer.buildToolsVersion
+    defaultConfig {
+        applicationId "com.credithc.baseapp"
+        minSdkVersion rootProject.compileVer.minSdkVersion
+        targetSdkVersion rootProject.compileVer.targetSdkVersion
+        versionCode rootProject.appVersion.versionCode
+        versionName rootProject.appVersion.versionName
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':NetLib')
+    implementation rootProject.dependenciesRep.supportV7
+    implementation rootProject.dependenciesRep.design
+    implementation rootProject.dependenciesRep.constraintLayout
+    implementation rootProject.dependenciesRep.retrofit2
+    implementation rootProject.dependenciesRep.gsonConverter
+    implementation rootProject.dependenciesRep.rxAdapter
+    implementation rootProject.dependenciesRep.rxJava
+    implementation rootProject.dependenciesRep.rxAndroid
+
+}
