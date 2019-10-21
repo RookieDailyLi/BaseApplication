@@ -1,1 +1,1 @@
-include ':app', ':NetLib'
+include ':app', ':NetLib', ':CommonLib'

@@ -7,12 +7,21 @@ android {
         applicationId "com.credithc.baseapp"
         minSdkVersion rootProject.compileVer.minSdkVersion
         targetSdkVersion rootProject.compileVer.targetSdkVersion
-        versionCode rootProject.appVersion.versionCode
-        versionName rootProject.appVersion.versionName
+        versionCode 1
+        versionName "1.0.0"
     }
     buildTypes {
+        debug {
+            minifyEnabled false
+            addServerConfig(debug, rootProject.TestConfig)
+            addServerConfig(debug, rootProject.PreConfig)
+            addServerConfig(debug, rootProject.ReleaseConfig)
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
         release {
             minifyEnabled false
+            addServerConfig(release, rootProject.ReleaseConfig)
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -23,11 +32,12 @@ dependencies {
     implementation project(':NetLib')
     implementation rootProject.dependenciesRep.supportV7
     implementation rootProject.dependenciesRep.design
+    implementation rootProject.dependenciesRep.multidex
     implementation rootProject.dependenciesRep.constraintLayout
     implementation rootProject.dependenciesRep.retrofit2
     implementation rootProject.dependenciesRep.gsonConverter
     implementation rootProject.dependenciesRep.rxAdapter
     implementation rootProject.dependenciesRep.rxJava
     implementation rootProject.dependenciesRep.rxAndroid
-
+    implementation project(':CommonLib')
 }

@@ -8,6 +8,8 @@ android {
         targetSdkVersion rootProject.compileVer.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+
     }
 
     buildTypes {
@@ -22,5 +24,4 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.dependenciesRep.supportV7
-    implementation rootProject.dependenciesRep.okhttp3
 }

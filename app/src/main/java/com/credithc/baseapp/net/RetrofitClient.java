@@ -1,5 +1,8 @@
 package com.credithc.baseapp.net;
 
+import com.credithc.baseapp.net.config.ServerHelper;
+import com.credithc.netlib.okhttp.OkHttpInstance;
+
 import java.util.HashMap;
 
 import retrofit2.Retrofit;
@@ -29,6 +32,7 @@ public class RetrofitClient {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
+                    .client(OkHttpInstance.getInstance().getOkHttpClient())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();
@@ -38,7 +42,7 @@ public class RetrofitClient {
     }
 
     public RetrofitService createService() {
-        return createRetrofitService(RetrofitService.class, "");
+        return createRetrofitService(RetrofitService.class, ServerHelper.getInstance().getHostURL());
     }
 
     public <T> T createRetrofitService(Class<T> cls, String baseUrl) {

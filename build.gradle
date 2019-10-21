@@ -8,7 +8,6 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
-        
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,6 +18,12 @@ allprojects {
     repositories {
         google()
         jcenter()
+    }
+}
+
+def addServerConfig(com.android.build.gradle.internal.dsl.BuildType buildType, Map map) {
+    for (Map.Entry entry : map.entrySet()) {
+        buildType.buildConfigField("String", map.get("serverTag") + "_" + "${entry.key}", "\"${entry.value}\"")
     }
 }
 
