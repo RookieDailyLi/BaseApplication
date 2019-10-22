@@ -4,7 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.credithc.baseapp.global.GlobalContext;
+import com.credithc.baseapp.net.interceptor.CommonHeaderInterceptor;
+import com.credithc.commonlib.GlobalContext;
 import com.credithc.netlib.okhttp.OkHttpInstance;
 
 /**
@@ -24,5 +25,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         GlobalContext.setContext(this);
+        OkHttpInstance.getInstance().init(OkHttpInstance.defaultBuilder
+                .addInterceptor(new CommonHeaderInterceptor()));
     }
 }

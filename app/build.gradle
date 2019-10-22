@@ -30,6 +30,7 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':NetLib')
+    implementation project(':CommonLib')
     implementation rootProject.dependenciesRep.supportV7
     implementation rootProject.dependenciesRep.design
     implementation rootProject.dependenciesRep.multidex
@@ -39,5 +40,7 @@ dependencies {
     implementation rootProject.dependenciesRep.rxAdapter
     implementation rootProject.dependenciesRep.rxJava
     implementation rootProject.dependenciesRep.rxAndroid
-    implementation project(':CommonLib')
+    implementation rootProject.dependenciesRep.walle
+    implementation rootProject.dependenciesRep.eventbus
+    implementation rootProject.dependenciesRep.logger
 }

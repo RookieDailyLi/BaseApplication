@@ -13,10 +13,10 @@ public class OkHttpInstance {
 
     private static OkHttpInstance instance;
     private OkHttpClient okHttpClient;
-    public static OkHttpClient.Builder builder;
+    public static OkHttpClient.Builder defaultBuilder;
 
     static {
-        builder = new OkHttpClient.Builder()
+        defaultBuilder = new OkHttpClient.Builder()
                 .readTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(15, TimeUnit.SECONDS)
                 .connectTimeout(15, TimeUnit.SECONDS)

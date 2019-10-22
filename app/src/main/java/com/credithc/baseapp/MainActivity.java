@@ -3,10 +3,10 @@ package com.credithc.baseapp;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
+
+import com.credithc.commonlib.listener.OnFastClickListener;
 
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.List;
 
 import io.reactivex.Observable;

@@ -1,4 +1,4 @@
-package com.credithc.baseapp.global;
+package com.credithc.commonlib;
 
 
 import android.app.Application;
