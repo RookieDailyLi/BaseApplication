@@ -40,6 +40,8 @@ dependencies {
     implementation rootProject.dependenciesRep.rxAdapter
     implementation rootProject.dependenciesRep.rxJava
     implementation rootProject.dependenciesRep.rxAndroid
+    implementation rootProject.dependenciesRep.rxLifeCycleAndroid
+    implementation rootProject.dependenciesRep.rxLifeCycleComponent
     implementation rootProject.dependenciesRep.walle
     implementation rootProject.dependenciesRep.eventbus
     implementation rootProject.dependenciesRep.logger

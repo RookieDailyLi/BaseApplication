@@ -2,12 +2,12 @@ package com.credithc.baseapp.net;
 
 import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.netlib.okhttp.OkHttpInstance;
+import com.credithc.netlib.retrofit.converter.NetConverterFactory;
 
 import java.util.HashMap;
 
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
  * @author liyong
@@ -16,7 +16,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitClient {
 
-    private Retrofit retrofit;
     private HashMap<String, Retrofit> retrofitMap = new HashMap<>();
 
     private static class Creator {
@@ -33,19 +32,19 @@ public class RetrofitClient {
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
                     .client(OkHttpInstance.getInstance().getOkHttpClient())
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .addConverterFactory(NetConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
             retrofitMap.put(url, retrofit);
         }
         return retrofit;
     }
 
-    public RetrofitService createService() {
+    public static RetrofitService createService() {
         return createRetrofitService(RetrofitService.class, ServerHelper.getInstance().getHostURL());
     }
 
-    public <T> T createRetrofitService(Class<T> cls, String baseUrl) {
-        return getRetrofit(baseUrl).create(cls);
+    public static <T> T createRetrofitService(Class<T> cls, String baseUrl) {
+        return getInstance().getRetrofit(baseUrl).create(cls);
     }
 }

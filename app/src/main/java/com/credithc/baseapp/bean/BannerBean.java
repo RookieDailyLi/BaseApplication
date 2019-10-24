@@ -1,5 +1,7 @@
 package com.credithc.baseapp.bean;
 
+import com.google.gson.JsonArray;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -108,7 +110,7 @@ public class BannerBean implements Serializable {
             private String title;
             private String imgPath;
             private int sort;
-            private List<String> route;
+            private JsonArray route;
 
             public int getId() {
                 return id;
@@ -142,11 +144,11 @@ public class BannerBean implements Serializable {
                 this.sort = sort;
             }
 
-            public List<String> getRoute() {
+            public JsonArray getRoute() {
                 return route;
             }
 
-            public void setRoute(List<String> route) {
+            public void setRoute(JsonArray route) {
                 this.route = route;
             }
         }

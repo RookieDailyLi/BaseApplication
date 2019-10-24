@@ -23,8 +23,8 @@ public class CommonHeaderInterceptor implements Interceptor {
     @Override
     public Response intercept(Chain chain) throws IOException {
         Request originRequest = chain.request();
-        originRequest.newBuilder().headers(Headers.of(headers()));
-        return chain.proceed(null);
+        Request.Builder builder = originRequest.newBuilder().headers(Headers.of(headers()));
+        return chain.proceed(builder.build());
     }
 
 

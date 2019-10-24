@@ -5,7 +5,7 @@ import android.view.View;
 /**
  * @author liyong
  * @date 2019/10/12 8:34
- * @description
+ * @description 按钮去重点击listener
  */
 public abstract class OnFastClickListener implements View.OnClickListener {
     private long lastClickTime = 0;

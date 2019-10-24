@@ -20,7 +20,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.dependenciesRep.supportV7
     implementation rootProject.dependenciesRep.okhttp3
+    implementation rootProject.dependenciesRep.gsonConverter
+    implementation project(':CommonLib')
 }

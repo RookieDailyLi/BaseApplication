@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NetLib</string>
+    <string name="no_network_tips">网络异常，请稍候重试</string>
+    <string name="server_error_tips">哎呀，服务器出了点小问题&#8230;</string>
 </resources>

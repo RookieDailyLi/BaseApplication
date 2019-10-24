@@ -1,13 +1,10 @@
 package com.credithc.baseapp.net;
 
-import com.credithc.baseapp.bean.ARequest;
-import com.credithc.baseapp.bean.BannerBean;
-import com.credithc.baseapp.bean.UserBean;
-import com.credithc.netlib.bean.ResultBean;
+import com.credithc.baseapp.bean.HomeBannerListBean;
+import com.credithc.netlib.bean.ResultModel;
 
-import retrofit2.http.Body;
+import io.reactivex.Observable;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
  * @author liyong
@@ -17,5 +14,5 @@ import rx.Observable;
 public interface RetrofitService {
 
     @POST("sysBanner/getReleaseBanners")
-    Observable<BannerBean> reqBanner(@Body ARequest request);
+    Observable<ResultModel<HomeBannerListBean>> reqBanner();
 }

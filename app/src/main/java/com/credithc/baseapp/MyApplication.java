@@ -5,6 +5,9 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.credithc.baseapp.net.interceptor.CommonHeaderInterceptor;
+import com.credithc.baseapp.net.interceptor.RequestEncryptInterceptor;
+import com.credithc.baseapp.net.interceptor.ResponseDecryptInterceptor;
+import com.credithc.baseapp.util.GlobalTools;
 import com.credithc.commonlib.GlobalContext;
 import com.credithc.netlib.okhttp.OkHttpInstance;
 
@@ -25,7 +28,10 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         GlobalContext.setContext(this);
+        GlobalTools.installLog(BuildConfig.DEBUG);
         OkHttpInstance.getInstance().init(OkHttpInstance.defaultBuilder
-                .addInterceptor(new CommonHeaderInterceptor()));
+                .addInterceptor(new CommonHeaderInterceptor())
+                .addInterceptor(new RequestEncryptInterceptor())
+                .addNetworkInterceptor(new ResponseDecryptInterceptor()));
     }
 }
