@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+        <!--标题-->
+        <attr name="titleText" format="string" />
+        <!--标题字体颜色-->
+        <attr name="titleTextColor" format="color" />
+        <!--标题字体大小-->
+        <attr name="titleTextSize" format="dimension" />
+        <!--标题栏背景-->
+        <attr name="titleBackground" format="color" />
+        <!--标题栏返回按钮图片-->
+        <attr name="titleBackIcon" format="reference" />
+        <!--标题栏返回按钮图片是否显示-->
+        <attr name="titleBackIconVisible" format="boolean" />
+        <!--标题栏底部分割线是否显示-->
+        <attr name="titleDividerVisible" format="boolean" />
+        <!--标题栏底部分割线颜色-->
+        <attr name="titleDividerColor" format="color" />
+        <!--标题栏右侧布局-->
+        <attr name="rightLayout" format="reference" />
+        <!--标题栏左侧布局-->
+        <attr name="leftLayout" format="reference" />
+        <!--标题栏中间布局-->
+        <attr name="centerLayout" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ProgressView">
+        <attr name="frameCount" format="integer" />
+        <attr name="duration" format="integer" />
+    </declare-styleable>
+</resources>

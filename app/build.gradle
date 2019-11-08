@@ -25,6 +25,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -40,9 +45,12 @@ dependencies {
     implementation rootProject.dependenciesRep.rxAdapter
     implementation rootProject.dependenciesRep.rxJava
     implementation rootProject.dependenciesRep.rxAndroid
-    implementation rootProject.dependenciesRep.rxLifeCycleAndroid
-    implementation rootProject.dependenciesRep.rxLifeCycleComponent
+    implementation rootProject.dependenciesRep.Autodispose
+    implementation rootProject.dependenciesRep.AutodisposeAndroid
+    implementation rootProject.dependenciesRep.AutodisposeAndroidArchcomponents
     implementation rootProject.dependenciesRep.walle
     implementation rootProject.dependenciesRep.eventbus
     implementation rootProject.dependenciesRep.logger
+    implementation rootProject.dependenciesRep.smartRefreshLayout
+
 }

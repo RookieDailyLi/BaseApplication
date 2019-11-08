@@ -1,4 +1,4 @@
-package com.credithc.baseapp.event;
+package com.credithc.commonlib.event;
 
 /**
 *@author liyong

@@ -14,6 +14,10 @@ public class LogUtil {
         isShowLog = showLog;
     }
 
+    public static boolean isShowLog() {
+        return isShowLog;
+    }
+
     public static void v(String mess, @Nullable Object... args) {
         if (isShowLog) {
             Logger.v(mess, args);

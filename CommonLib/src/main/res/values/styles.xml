@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TitleBar">
+        <item name="titleTextColor">@color/title_bar_txt_color</item>
+        <item name="titleTextSize">@dimen/title_bar_txt_size</item>
+        <item name="titleBackground">@color/title_bar_bg</item>
+        <item name="titleBackIcon">@drawable/icon_back</item>
+        <item name="titleBackIconVisible">true</item>
+        <item name="titleDividerVisible">true</item>
+        <item name="titleDividerColor">@color/title_bar_divider</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_bar_height</item>
+    </style>
+
+    <style name="SmartRefreshLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/refresh_root_bg</item>
+        <item name="srlAccentColor">@color/refresh_accent_color</item>
+        <item name="srlPrimaryColor">@color/refresh_primary_color</item>
+    </style>
+    <!-- dialog 背景不透明-->
+    <style name="confirm_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 模糊 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+    </style>
+</resources>

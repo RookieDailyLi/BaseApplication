@@ -4,6 +4,7 @@ import android.os.Handler;
 
 import com.credithc.commonlib.util.CheckApk;
 import com.credithc.commonlib.util.LogUtil;
+import com.credithc.commonlib.util.ToastUtil;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;

@@ -58,15 +58,18 @@ ext {
             rxJava              : "io.reactivex.rxjava2:rxjava:2.2.10",
             //https://github.com/ReactiveX/RxAndroid
             rxAndroid           : "io.reactivex.rxjava2:rxandroid:2.0.2",
-            //https://github.com/trello/RxLifecycle
-            rxLifeCycleAndroid  : "com.trello.rxlifecycle2:rxlifecycle-android:2.2.1",
-            rxLifeCycleComponent: "com.trello.rxlifecycle2:rxlifecycle-components:2.2.1",
+            // https://github.com/uber/AutoDispose
+            Autodispose                     : 'com.uber.autodispose:autodispose:0.7.0',
+            AutodisposeAndroid              : 'com.uber.autodispose:autodispose-android:0.7.0',
+            AutodisposeAndroidArchcomponents: 'com.uber.autodispose:autodispose-android-archcomponents:0.7.0',
             // https://github.com/Meituan-Dianping/walle
             walle               : 'com.meituan.android.walle:library:1.1.5',
             eventbus            : 'org.greenrobot:eventbus:3.1.1',
             // https://github.com/orhanobut/logger
             logger              : 'com.orhanobut:logger:2.2.0',
             Gson                : "com.google.code.gson:gson:2.8.2",
+            //https://github.com/scwang90/SmartRefreshLayout
+            smartRefreshLayout        : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14',
     ]
 
 }

@@ -1,4 +1,4 @@
-package com.credithc.baseapp.widget;
+package com.credithc.commonlib.util;
 
 import android.support.annotation.DrawableRes;
 import android.view.Gravity;
@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.credithc.baseapp.R;
 import com.credithc.commonlib.GlobalContext;
+import com.credithc.commonlib.R;
 import com.credithc.commonlib.util.ResUtil;
 import com.credithc.commonlib.util.ViewUtil;
 

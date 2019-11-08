@@ -1,7 +1,7 @@
 package com.credithc.baseapp.util;
 
 import com.credithc.baseapp.constant.SPConstants;
-import com.credithc.baseapp.event.LoginEvent;
+import com.credithc.commonlib.event.LoginEvent;
 import com.credithc.commonlib.util.SPManager;
 import com.credithc.commonlib.util.StringUtil;
 

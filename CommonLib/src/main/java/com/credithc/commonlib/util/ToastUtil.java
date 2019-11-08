@@ -1,4 +1,4 @@
-package com.credithc.baseapp.util;
+package com.credithc.commonlib.util;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -6,22 +6,19 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.credithc.baseapp.R;
-import com.credithc.baseapp.widget.ErrorView;
 import com.credithc.commonlib.GlobalContext;
-import com.credithc.commonlib.util.ResUtil;
-import com.credithc.commonlib.util.StringUtil;
+import com.credithc.commonlib.R;
 
 
 /**
-*@author liyong
-*@date 2019/10/22
-*@des
-*/
+ * @author liyong
+ * @date 2019/10/22
+ * @des
+ */
 public class ToastUtil extends ErrorView {
-    
+
     private static Toast mToast;
-    
+
     public static void showToast(Context mContext, String text, int duration) {
         if (StringUtil.isNull(text))
             return;
@@ -41,25 +38,25 @@ public class ToastUtil extends ErrorView {
         if (mToast != null) {
             mToast.show();
         }
-        
+
     }
-    
-    
+
+
     public static void showToast(String text) {
         showToast(text, Toast.LENGTH_SHORT);
     }
-    
+
     public static void showToast(String text, int duration) {
         showToast(GlobalContext.getContext(), text, duration);
     }
-    
+
     public static void showToast(int resId, int duration) {
         showToast(GlobalContext.getContext(), ResUtil.getString(resId), duration);
     }
-    
+
     public static void showToast(int resId) {
         showToast(resId, Toast.LENGTH_SHORT);
     }
-    
-    
+
+
 }

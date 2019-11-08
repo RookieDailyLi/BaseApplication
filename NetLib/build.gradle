@@ -16,13 +16,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation rootProject.dependenciesRep.supportV7
+    implementation rootProject.dependenciesRep.rxJava
     implementation rootProject.dependenciesRep.okhttp3
     implementation rootProject.dependenciesRep.gsonConverter
+    implementation rootProject.dependenciesRep.eventbus
     implementation project(':CommonLib')
 }

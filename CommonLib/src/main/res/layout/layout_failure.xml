@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/iv_failure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="60dip"
+        android:src="@drawable/ic_failure" />
+
+    <TextView
+        android:id="@+id/tv_failure_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dip"
+        android:text="@string/error_resp_prompt"
+        android:textColor="@color/error_prompt_color"
+        android:textSize="@dimen/text_size_14" />
+
+    <TextView
+        android:id="@+id/btn_failure_again"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+        android:background="@null"
+        android:gravity="center_horizontal"
+        android:paddingTop="30dp"
+        android:text="@string/error_resp_btn_refresh"
+        android:textColor="@color/error_resp_btn_color"
+        android:textSize="@dimen/text_size_14" />
+</LinearLayout>
