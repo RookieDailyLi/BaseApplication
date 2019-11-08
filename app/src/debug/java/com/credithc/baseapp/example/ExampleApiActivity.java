@@ -1,5 +1,6 @@
 package com.credithc.baseapp.example;
 
+import android.view.View;
 import android.widget.Button;
 
 import com.credithc.baseapp.R;
@@ -31,14 +32,20 @@ public class ExampleApiActivity extends BaseRefreshFragmentActivity<ExamplePrese
 
     @Override
     protected void setUpView() {
-        Button button = findViewById(R.id.button);
+        findViewById(R.id.button)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        presenter.reqBanner();
+                    }
+                });
 
     }
 
 
     @Override
     protected void loadData() {
-        presenter.reqBanner();
+//        presenter.reqBanner();
     }
 
 

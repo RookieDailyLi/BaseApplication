@@ -64,7 +64,7 @@ public class ResultModelConvert extends StringConvert {
             JSONObject jsonHeader = jsonResponse.getJSONObject("header");
             String code = jsonHeader.optString("code");
             String msg = jsonHeader.optString("msg");
-            JSONObject data = jsonResponse.optJSONObject("data");
+            JSONObject data = jsonResponse.optJSONObject("body");
             resultModel.setCode(code);
             resultModel.setMessage(msg);
             if (type instanceof ParameterizedType) {
