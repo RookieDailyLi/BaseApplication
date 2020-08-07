@@ -1,4 +1,4 @@
-package com.credithc.baseapp.example;
+package com.credithc.baseapp.example.activity;
 
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +45,6 @@ public class ExampleApiActivity extends BaseRefreshFragmentActivity<ExamplePrese
 
     @Override
     protected void loadData() {
-//        presenter.reqBanner();
     }
 
 

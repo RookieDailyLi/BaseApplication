@@ -7,7 +7,7 @@
         android:name=".DebugMyApplication"
         android:largeHeap="true"
         tools:replace="android:name">
-        <activity android:name=".example.ExampleApiActivity"
+        <activity android:name=".example.activity.ExampleApiActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
