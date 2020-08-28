@@ -8,7 +8,7 @@ import io.reactivex.observers.DisposableObserver;
 /**
  * @author liyong
  * @date 2019/10/31
- * @des 网络请求回调类
+ * @des 网络请求回调类Observer类型
  */
 public abstract class ResponseCallBack<T> extends DisposableObserver<ResultModel<T>> implements BaseResponseCallBack<T> {
 
@@ -34,4 +34,6 @@ public abstract class ResponseCallBack<T> extends DisposableObserver<ResultModel
     public final void onComplete() {
         commonBack.onComplete(this);
     }
+
+
 }

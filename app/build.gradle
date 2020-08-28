@@ -36,6 +36,7 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':NetLib')
     implementation project(':CommonLib')
+    implementation project(':MVP')
     implementation rootProject.dependenciesRep.supportV7
     implementation rootProject.dependenciesRep.design
     implementation rootProject.dependenciesRep.multidex

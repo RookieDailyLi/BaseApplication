@@ -82,17 +82,13 @@
     <color name="divider">#D7D7D7</color>
     <color name="classify_gray">#EEF0F4</color>
 
+
+    <color name="C_E6E9EE">#E6E9EE</color>
     <color name="C_9A9CA6">#9A9CA6</color>
     <color name="C_5181E1">#5181E1</color>
     <color name="C_555555">#555555</color>
     <color name="C_FFF8F9FA">#FFF8F9FA</color>
 
-
-    <color name="empty_prompt_color">@color/C_9A9CA6</color>
-    <color name="empty_data_btn_color">@color/C_5181E1</color>
-    <color name="error_prompt_color">@color/C_9A9CA6</color>
-    <color name="error_resp_btn_color">@color/C_5181E1</color>
-    <color name="net_prompt_color">@color/C_9A9CA6</color>
     <color name="net_resp_btn_color">@color/C_5181E1</color>
     <color name="ios_bottom_dialog_cancel_txt">@color/C_555555</color>
     <color name="refresh_accent_color">@color/C_555555</color>
@@ -107,4 +103,6 @@
     <color name="dialog_content_color">#555555</color>
     <color name="dialog_right_btn_color">@color/white</color>
     <color name="loading_dialog_bg">#99000000</color>
+    <color name="common_divider">@color/C_E6E9EE</color>
+
 </resources>

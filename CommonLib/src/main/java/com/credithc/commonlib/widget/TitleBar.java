@@ -24,10 +24,10 @@ import android.widget.TextView;
 import com.credithc.commonlib.R;
 import com.credithc.commonlib.util.ResUtil;
 
+
 /**
- * @author liyong
- * @date 2019/11/6
- * @des
+ * Created by lwj on 2018/12/13.
+ * lwjfork@gmail.com
  */
 public class TitleBar extends ConstraintLayout {
     @ColorInt
@@ -120,7 +120,7 @@ public class TitleBar extends ConstraintLayout {
         setTitleDividerVisible(titleDividerVisible);
         setTitleBackground(titleBackground);
         setLeftBackVisible(titleBackIconVisible);
-        iv_back.setOnClickListener(new View.OnClickListener() {
+        iv_back.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((Activity) context).finish();
@@ -201,7 +201,7 @@ public class TitleBar extends ConstraintLayout {
         }
     }
 
-    public void setLeftBackClickListener(View.OnClickListener onClickListener) {
+    public void setLeftBackClickListener(OnClickListener onClickListener) {
         iv_back.setOnClickListener(onClickListener);
     }
 

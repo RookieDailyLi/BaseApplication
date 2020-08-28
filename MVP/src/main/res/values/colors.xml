@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFFFF</color>
+    <color name="C_9A9CA6">#9A9CA6</color>
+    <color name="C_5181E1">#5181E1</color>
+
+    <color name="empty_prompt_color">@color/C_9A9CA6</color>
+    <color name="empty_data_btn_color">@color/C_5181E1</color>
+    <color name="error_prompt_color">@color/C_9A9CA6</color>
+    <color name="error_resp_btn_color">@color/C_5181E1</color>
+    <color name="net_prompt_color">@color/C_9A9CA6</color>
+    <color name="net_resp_btn_color">@color/C_5181E1</color>
+
+</resources>

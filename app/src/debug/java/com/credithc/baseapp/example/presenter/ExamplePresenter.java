@@ -2,7 +2,7 @@ package com.credithc.baseapp.example.presenter;
 
 import com.credithc.baseapp.bean.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
-import com.credithc.commonlib.mvp.p.RxBasePresenter;
+import com.credithc.mvp.presenter.RxBasePresenter;
 import com.credithc.netlib.bean.ResultModel;
 import com.credithc.netlib.callback.ResponseCallBack;
 
@@ -20,11 +20,11 @@ public class ExamplePresenter extends RxBasePresenter<ExampleContract.Model, Exa
     public void reqBanner() {
         model.reqBanner()
                 .compose(observable_io_main())
-                .as(bindAutoDispose())
+                .as(mView.bindAutoDispose())
                 .subscribe(new ResponseCallBack<HomeBannerListBean>() {
                     @Override
                     public void onRequestStart() {
-                        showLoading();
+                        mView.showLoading();
                     }
 
                     @Override
@@ -36,17 +36,17 @@ public class ExamplePresenter extends RxBasePresenter<ExampleContract.Model, Exa
 
                     @Override
                     public void onRequestFail(ResultModel resultModel) {
-                        showLoadFailure();
+                        mView.showLoadFailure();
                     }
 
                     @Override
                     public void onNetFail(ResultModel resultModel) {
-                        showNetException();
+                        mView.showNetException();
                     }
 
                     @Override
                     public void onRequestFinish() {
-                        loadComplete();
+                        mView.loadComplete();
                     }
                 });
     }

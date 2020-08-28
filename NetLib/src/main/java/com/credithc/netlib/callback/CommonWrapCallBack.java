@@ -26,6 +26,21 @@ import retrofit2.Response;
  */
 class CommonWrapCallBack {
 
+    public final boolean isSuccess(String code) {
+        return APICode.CODE_SUCCESS.equals(code);
+    }
+
+    public final boolean isNeedLogin(String code) {
+        return APICode.CODE_LOGIN.equals(code);
+    }
+
+    public final void loginOut(ResultModel tResultModel) {
+        ToastUtil.showToast(tResultModel.getMessage());
+        EventBus.getDefault().post(new LoginEvent.LoginOff());
+    }
+
+    //============================================================
+
     public final void onStart(BaseResponseCallBack realCallBack) {
         realCallBack.onRequestStart();
     }
@@ -37,7 +52,7 @@ class CommonWrapCallBack {
         }
 
         // 重新登录
-        if (isForcedLoginOut(tResultModel.getCode())) {
+        if (isNeedLogin(tResultModel.getCode())) {
             loginOut(tResultModel);
             return;
         }
@@ -95,19 +110,5 @@ class CommonWrapCallBack {
 
     public final void onComplete(BaseResponseCallBack realCallBack) {
         realCallBack.onRequestFinish();
-    }
-
-    public final boolean isSuccess(String code) {
-        return APICode.CODE_SUCCESS.equals(code);
-    }
-
-    public final boolean isForcedLoginOut(String code) {
-        return APICode.CODE_LOGIN.equals(code);
-    }
-
-    public final void loginOut(ResultModel tResultModel) {
-        ToastUtil.showToast(tResultModel.getMessage());
-        // 退出登录
-        EventBus.getDefault().post(new LoginEvent.LoginOff());
     }
 }

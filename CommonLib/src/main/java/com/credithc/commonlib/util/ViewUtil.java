@@ -2,9 +2,13 @@ package com.credithc.commonlib.util;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +16,7 @@ import android.view.ViewStub;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +24,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.credithc.commonlib.GlobalContext;
+import com.credithc.commonlib.widget.LinearDrawable;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 
 /**
  * Created by lwj on 2016/3/8.
@@ -427,4 +437,191 @@ public final class ViewUtil {
     public static CheckBox findCheckBoxById(Activity activity, @IdRes int id) {
         return findViewById(activity, id);
     }
+
+
+    /**
+     * Sets compound drawables.
+     *
+     * @param <T>       the type parameter
+     * @param view      the view
+     * @param leftRes   the left res
+     * @param topRes    the top res
+     * @param rightRes  the right res
+     * @param bottomRes the bottom res
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setCompoundDrawables(T view, @Nullable Drawable leftRes, @Nullable Drawable topRes, @Nullable Drawable rightRes, @Nullable Drawable bottomRes) {
+        DrawableUtil.setCompoundDrawables(view, leftRes, topRes, rightRes, bottomRes);
+    }
+
+
+    /**
+     * Sets compound drawables.
+     *
+     * @param <T>       the type parameter
+     * @param view      the view
+     * @param leftRes   the left res
+     * @param topRes    the top res
+     * @param rightRes  the right res
+     * @param bottomRes the bottom res
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setCompoundDrawables(T view, int leftRes, int topRes, int rightRes, int bottomRes) {
+
+        DrawableUtil.setCompoundDrawables(view, leftRes, topRes, rightRes, bottomRes);
+
+    }
+
+
+    /**
+     * Sets left drawable.
+     *
+     * @param <T>  the type parameter
+     * @param view the view
+     * @param id   the id
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setLeftDrawable(T view, @DrawableRes int id) {
+        DrawableUtil.setLeftDrawable(view, id);
+    }
+
+    /**
+     * Sets top drawable.
+     *
+     * @param <T>  the type parameter
+     * @param view the view
+     * @param id   the id
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setTopDrawable(T view, @DrawableRes int id) {
+        DrawableUtil.setTopDrawable(view, id);
+    }
+
+    /**
+     * Sets right drawable.
+     *
+     * @param <T>  the type parameter
+     * @param view the view
+     * @param id   the id
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setRightDrawable(T view, @DrawableRes int id) {
+        DrawableUtil.setRightDrawable(view, id);
+    }
+
+    /**
+     * Sets bottom drawable.
+     *
+     * @param <T>  the type parameter
+     * @param view the view
+     * @param id   the id
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setBottomDrawable(T view, @DrawableRes int id) {
+        DrawableUtil.setBottomDrawable(view, id);
+    }
+
+    /**
+     * Sets left drawable.
+     *
+     * @param <T>      the type parameter
+     * @param view     the view
+     * @param drawable the drawable
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setLeftDrawable(T view, Drawable drawable) {
+        DrawableUtil.setLeftDrawable(view, drawable);
+    }
+
+    /**
+     * Sets top drawable.
+     *
+     * @param <T>      the type parameter
+     * @param view     the view
+     * @param drawable the drawable
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setTopDrawable(T view, Drawable drawable) {
+        DrawableUtil.setTopDrawable(view, drawable);
+    }
+
+    /**
+     * Sets right drawable.
+     *
+     * @param <T>      the type parameter
+     * @param view     the view
+     * @param drawable the drawable
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setRightDrawable(T view, Drawable drawable) {
+        DrawableUtil.setRightDrawable(view, drawable);
+    }
+
+    /**
+     * Sets bottom drawable.
+     *
+     * @param <T>      the type parameter
+     * @param view     the view
+     * @param drawable the drawable
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void setBottomDrawable(T view, Drawable drawable) {
+        DrawableUtil.setBottomDrawable(view, drawable);
+    }
+
+    /**
+     * 清除图片
+     *
+     * @param <T>  the type parameter
+     * @param view the view
+     * @author Created by lwjfork on 2018/07/09 17:44
+     */
+    public static <T extends TextView> void clearCompoundDrawables(T view) {
+        DrawableUtil.clearCompoundDrawables(view);
+    }
+
+
+    public static void setDivider(LinearLayout layout, Drawable drawable, @LinearLayoutCompat.DividerMode int showDividers) {
+        layout.setDividerDrawable(drawable);
+        layout.setShowDividers(showDividers);
+    }
+
+    public static void setCursorDrawable(EditText editText, @DrawableRes int cursorDrawable) {
+
+        try {
+            Field field = TextView.class.getDeclaredField("mCursorDrawableRes");
+            field.setAccessible(true);
+            field.set(editText, cursorDrawable);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void setCursorDrawable(EditText editText, Drawable cursorDrawable) {
+        if (editText == null || cursorDrawable == null) {
+            return;
+        }
+        try {
+            Method method = TextView.class.getDeclaredMethod("createEditorIfNeeded");
+            method.setAccessible(true);
+            method.invoke(editText);
+            Field field1 = TextView.class.getDeclaredField("mEditor");
+            Field field2 = Class.forName("android.widget.Editor").getDeclaredField("mCursorDrawable");
+            field1.setAccessible(true);
+            field2.setAccessible(true);
+            Object arr = field2.get(field1.get(editText));
+            Array.set(arr, 0, cursorDrawable);
+            Array.set(arr, 1, cursorDrawable);
+        } catch (Exception ignored) {
+        }
+    }
+
+    public static void setCursorDrawable(EditText editText, @ColorInt int cursorColor, int cursorWidth, int cursorHeight) {
+        if (editText == null) {
+            return;
+        }
+        LinearDrawable linearDrawable = new LinearDrawable(cursorColor, cursorWidth, cursorHeight);
+        setCursorDrawable(editText, linearDrawable);
+    }
+
 }

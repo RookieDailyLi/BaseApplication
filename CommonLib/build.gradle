@@ -28,11 +28,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.dependenciesRep.supportV7
+    implementation rootProject.dependenciesRep.recyclerview
     implementation rootProject.dependenciesRep.logger
     implementation rootProject.dependenciesRep.Gson
     implementation rootProject.dependenciesRep.smartRefreshLayout
     implementation rootProject.dependenciesRep.constraintLayout
+    implementation rootProject.dependenciesRep.fresco
+    implementation rootProject.dependenciesRep.frescoOkhttp
     implementation rootProject.dependenciesRep.Autodispose
     implementation rootProject.dependenciesRep.AutodisposeAndroid
     implementation rootProject.dependenciesRep.AutodisposeAndroidArchcomponents
+
 }

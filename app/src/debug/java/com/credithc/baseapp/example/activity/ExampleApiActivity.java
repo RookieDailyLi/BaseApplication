@@ -1,15 +1,14 @@
 package com.credithc.baseapp.example.activity;
 
 import android.view.View;
-import android.widget.Button;
 
 import com.credithc.baseapp.R;
 import com.credithc.baseapp.bean.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
 import com.credithc.baseapp.example.model.ExampleModel;
 import com.credithc.baseapp.example.presenter.ExamplePresenter;
-import com.credithc.commonlib.ui.activity.BaseRefreshFragmentActivity;
 import com.credithc.commonlib.util.ToastUtil;
+import com.credithc.mvp.ui.activity.RxRefreshFragmentActivity;
 import com.credithc.netlib.bean.ResultModel;
 
 /**
@@ -17,7 +16,7 @@ import com.credithc.netlib.bean.ResultModel;
  * @date 2019/11/6 16:41
  * @description
  */
-public class ExampleApiActivity extends BaseRefreshFragmentActivity<ExamplePresenter> implements ExampleContract.View {
+public class ExampleApiActivity extends RxRefreshFragmentActivity<ExamplePresenter> implements ExampleContract.View {
 
 
     @Override

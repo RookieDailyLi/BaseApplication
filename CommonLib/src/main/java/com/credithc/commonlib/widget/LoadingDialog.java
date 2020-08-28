@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -66,7 +67,7 @@ public class LoadingDialog extends Dialog {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dialog_loading);
         txt = (TextView) findViewById(R.id.txt);
-        if (StringUtil.isNotEmpty(title)) {
+        if (!TextUtils.isEmpty(title)) {
             txt.setText(title);
             txt.setVisibility(View.VISIBLE);
         } else {

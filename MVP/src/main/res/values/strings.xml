@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MVP</string>
+    <string name="click_refresh">点击屏幕刷新</string>
+    <string name="empty_data_msg">暂时没有数据</string>
+    <string name="server_exception_msg">哎呀，服务器出了点小问题&#8230;</string>
+    <string name="net_exception_msg">网络异常,请稍后重试</string>
+</resources>
