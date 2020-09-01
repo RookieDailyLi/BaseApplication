@@ -1,6 +1,6 @@
 package com.credithc.baseapp.example.contract;
 
-import com.credithc.baseapp.bean.HomeBannerListBean;
+import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.mvp.model.BaseModel;
 import com.credithc.mvp.view.RxBaseView;
 import com.credithc.netlib.bean.ResultModel;
@@ -14,14 +14,14 @@ import io.reactivex.Observable;
  */
 public interface ExampleContract {
     interface Model extends BaseModel {
-        Observable<ResultModel<HomeBannerListBean>> reqBanner();
+        Observable<ResultModel<HomeBannerListBean>> testApiReq();
     }
 
     interface View extends RxBaseView {
-        void showBanner(ResultModel<HomeBannerListBean> resultModel);
+        void testApiResponse(ResultModel<HomeBannerListBean> resultModel);
     }
 
     interface Presenter {
-        void reqBanner();
+        void testApi();
     }
 }

@@ -8,7 +8,9 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.os.Build;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 
@@ -63,6 +65,7 @@ public final class AppUtil {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     public boolean isRunning(String packageName) {
 
         boolean isRunning = false;
@@ -79,6 +82,12 @@ public final class AppUtil {
             }
         }
         return isRunning;
+    }
+
+    public static void shutDownApp() {
+        com.credithc.commonlib.util.ActivityManager.popAll();
+        android.os.Process.killProcess(android.os.Process.myPid());
+        System.exit(0);
     }
 
 

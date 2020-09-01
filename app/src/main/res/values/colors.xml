@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="activity_tab_divider">#FFD8AA55</color>
+    <color name="main_tab_txt_select">#FF5B3D</color>
+    <color name="main_tab_txt_normal">#1E2127</color>
+
+
 </resources>

@@ -22,7 +22,7 @@ public class ServerHelper extends HCServerHelper {
         return Creator.instance;
     }
 
-    public String encryptData(String content) { //加密数据
+    public synchronized String encryptData(String content) { //加密数据
         if (serverConfig.encryptAble()) {
             return AES.getHttpAes(AES_KEY, IV, WAY).encryptAES(content);
         } else {
@@ -30,7 +30,7 @@ public class ServerHelper extends HCServerHelper {
         }
     }
 
-    public String decryptData(String content) { //解密数据
+    public synchronized String decryptData(String content) { //解密数据
         if (serverConfig.encryptAble()) {
             return AES.getHttpAes(AES_KEY, IV, WAY).decryptAES(content);
         } else {

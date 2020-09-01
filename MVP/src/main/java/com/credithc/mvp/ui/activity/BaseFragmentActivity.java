@@ -63,9 +63,9 @@ public abstract class BaseFragmentActivity<P extends BasePresenter> extends Defa
         mContent.addView(View.inflate(this, layoutContentId(), null));
     }
 
-    protected abstract P createPresenter();
-
     protected abstract int layoutContentId();
+
+    protected abstract P createPresenter();
 
     protected abstract void setUpView();
 

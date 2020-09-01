@@ -5,6 +5,12 @@ import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.OnLifecycleEvent;
 
 import com.credithc.mvp.model.BaseModel;
+import com.credithc.mvp.ui.exception.base.ILoadCovers;
+import com.credithc.mvp.ui.exception.base.ILoadEmpty;
+import com.credithc.mvp.ui.exception.base.ILoadFailure;
+import com.credithc.mvp.ui.exception.base.ILoading;
+import com.credithc.mvp.ui.exception.base.INetException;
+import com.credithc.mvp.ui.exception.base.IToast;
 import com.credithc.mvp.view.BaseView;
 
 /**
@@ -12,7 +18,7 @@ import com.credithc.mvp.view.BaseView;
  * @date 2019/11/4
  * @des
  */
-public class BasePresenter<M extends BaseModel, V extends BaseView> implements LifecycleObserver {
+public class BasePresenter<M extends BaseModel, V extends BaseView> implements LifecycleObserver{
 
     protected V mView;
     protected M model;

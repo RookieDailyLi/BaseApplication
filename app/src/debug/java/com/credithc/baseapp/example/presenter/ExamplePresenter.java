@@ -1,10 +1,10 @@
 package com.credithc.baseapp.example.presenter;
 
-import com.credithc.baseapp.bean.HomeBannerListBean;
+import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
+import com.credithc.baseapp.net.callback.DefaultResponseCallBack;
 import com.credithc.mvp.presenter.RxBasePresenter;
 import com.credithc.netlib.bean.ResultModel;
-import com.credithc.netlib.callback.ResponseCallBack;
 
 /**
  * @author liyong
@@ -17,36 +17,30 @@ public class ExamplePresenter extends RxBasePresenter<ExampleContract.Model, Exa
     }
 
     @Override
-    public void reqBanner() {
-        model.reqBanner()
+    public void testApi() {
+        model.testApiReq()
                 .compose(observable_io_main())
                 .as(mView.bindAutoDispose())
-                .subscribe(new ResponseCallBack<HomeBannerListBean>() {
-                    @Override
-                    public void onRequestStart() {
-                        mView.showLoading();
-                    }
-
+                .subscribe(new DefaultResponseCallBack<HomeBannerListBean>(mView) {
                     @Override
                     public void onResponseSuccess(ResultModel<HomeBannerListBean> resultModel) {
-                        if (isViewAttached()) {
-                            mView.showBanner(resultModel);
+                        if(isViewAttached()){
+                            mView.testApiResponse(resultModel);
                         }
                     }
 
                     @Override
                     public void onRequestFail(ResultModel resultModel) {
-                        mView.showLoadFailure();
+                        if(isViewAttached()){
+                            mView.showLoadFailure();
+                        }
                     }
 
                     @Override
                     public void onNetFail(ResultModel resultModel) {
-                        mView.showNetException();
-                    }
-
-                    @Override
-                    public void onRequestFinish() {
-                        mView.loadComplete();
+                        if(isViewAttached()){
+                            mView.showNetException();
+                        }
                     }
                 });
     }

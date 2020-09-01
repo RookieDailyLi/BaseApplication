@@ -1,6 +1,6 @@
 package com.credithc.baseapp.net;
 
-import com.credithc.baseapp.bean.HomeBannerListBean;
+import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.netlib.bean.ResultModel;
 
 import io.reactivex.Observable;

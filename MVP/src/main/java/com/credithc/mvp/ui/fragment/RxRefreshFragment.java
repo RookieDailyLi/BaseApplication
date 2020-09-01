@@ -35,7 +35,9 @@ public abstract class RxRefreshFragment<P extends RxBasePresenter> extends RxFra
 
     @Override
     protected void setUpRootView(ViewGroup rootView) {
-        View refreshRootView = LayoutInflater.from(mActivity).inflate(getFragmentLayoutId(), rootView);
+        View refreshRootView = LayoutInflater.from(mActivity).inflate(getFragmentLayoutId(),null);
+        rootView.removeAllViews();
+        rootView.addView(refreshRootView);
         smartRefreshLayout = (SmartRefreshLayout) refreshRootView;
         contentView = rootView.findViewById(R.id.base_fragment_content);
         ViewGroup contentViewGroup = (ViewGroup) contentView;

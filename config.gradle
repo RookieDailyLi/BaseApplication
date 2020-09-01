@@ -14,7 +14,7 @@ ext {
             AES_KEY  : 'devKey1234567890',
             IV       : 'stagePayMall0000',
             WAY      : 'AES/CBC/PKCS5Padding',
-            encrypt  : "true" // 是否加密
+            encrypt  : "true"
     ]
 
     // 预发布环境

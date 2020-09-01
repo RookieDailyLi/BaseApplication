@@ -2,7 +2,7 @@ package com.credithc.baseapp.net;
 
 import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.netlib.okhttp.OkHttpInstance;
-import com.credithc.netlib.retrofit.converter.NetConverterFactory;
+import com.credithc.netlib.retrofit.factory.NetConverterFactory;
 
 import java.util.HashMap;
 

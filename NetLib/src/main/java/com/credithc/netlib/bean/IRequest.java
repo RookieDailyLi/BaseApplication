@@ -12,8 +12,6 @@ import okhttp3.RequestBody;
  */
 public interface IRequest extends Serializable {
 
-    MediaType mediaType();
-
     RequestBody createReqBody();
 
 }

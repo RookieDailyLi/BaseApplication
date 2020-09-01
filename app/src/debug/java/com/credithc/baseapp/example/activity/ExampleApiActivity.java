@@ -3,7 +3,7 @@ package com.credithc.baseapp.example.activity;
 import android.view.View;
 
 import com.credithc.baseapp.R;
-import com.credithc.baseapp.bean.HomeBannerListBean;
+import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
 import com.credithc.baseapp.example.model.ExampleModel;
 import com.credithc.baseapp.example.presenter.ExamplePresenter;
@@ -35,7 +35,7 @@ public class ExampleApiActivity extends RxRefreshFragmentActivity<ExamplePresent
                 .setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        presenter.reqBanner();
+                        presenter.testApi();
                     }
                 });
 
@@ -48,7 +48,7 @@ public class ExampleApiActivity extends RxRefreshFragmentActivity<ExamplePresent
 
 
     @Override
-    public void showBanner(ResultModel<HomeBannerListBean> resultModel) {
+    public void testApiResponse(ResultModel<HomeBannerListBean> resultModel) {
         ToastUtil.showToast("code: " + resultModel.getCode() + " msg: " + resultModel.getMessage());
     }
 }

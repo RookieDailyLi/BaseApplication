@@ -1,6 +1,6 @@
 package com.credithc.baseapp;
 
-import com.credithc.baseapp.server.config.DebugServerConfig;
+import com.credithc.baseapp.server.ServerManager;
 
 /**
  * @author liyong
@@ -12,6 +12,6 @@ public class DebugMyApplication extends MyApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        DebugServerConfig.config(DebugServerConfig.ServerTestType);
+        ServerManager.config(ServerManager.ServerTestType);
     }
 }

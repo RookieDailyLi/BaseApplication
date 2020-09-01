@@ -27,7 +27,6 @@ public class CommonHeaderInterceptor implements Interceptor {
         return chain.proceed(builder.build());
     }
 
-
     private HashMap<String, String> headers() {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("reqDate", System.currentTimeMillis() + "");
