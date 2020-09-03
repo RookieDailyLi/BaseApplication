@@ -214,5 +214,48 @@ public final class AppUtil {
         }
         return imei;
     }
+
+    /**
+     * 梆梆加固，防劫持检查
+     * Android 5.0及以下可用
+     */
+    @SuppressLint("NewApi")
+    public static void checkHijack() {
+        try {
+            ActivityManager activityManager = OSUtils.getSystemService(Context.ACTIVITY_SERVICE);
+            List<ActivityManager.RunningTaskInfo> tasks = activityManager.getRunningTasks(2);
+            if (tasks == null || tasks.isEmpty()) {
+                return;
+            }
+            ActivityManager.RunningTaskInfo info = tasks.get(0);
+            if (info == null) {
+                return;
+            }
+            String topPackage = null;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                topPackage = info.topActivity.getPackageName();
+            }
+
+            if (!AppUtil.getPackageName().equals(topPackage)) {
+                LogUtil.i("ui hijack show...");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 多进程环境下，防止多次初始化
+     *
+     * @return true 初始化， false 不初始化
+     */
+    public static boolean isInitAble() {
+
+        String packageName = getPackageName();
+        if (packageName == null) { // impossible
+            return true;
+        }
+        return packageName.equalsIgnoreCase(OSUtils.getProcessName());
+    }
 }
 

@@ -4,7 +4,7 @@
     package="com.credithc.baseapp">
 
     <application
-        android:name=".DebugMyApplication"
+        android:name=".DebugApplication"
         android:largeHeap="true"
         tools:replace="android:name">
         <activity android:name=".example.activity.ExampleApiActivity"

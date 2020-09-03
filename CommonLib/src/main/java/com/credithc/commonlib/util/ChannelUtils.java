@@ -1,4 +1,4 @@
-package com.credithc.baseapp.util;
+package com.credithc.commonlib.util;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -6,24 +6,21 @@ import android.text.TextUtils;
 import com.credithc.commonlib.GlobalContext;
 import com.meituan.android.walle.WalleChannelReader;
 
-/**
- * Created by Administrator on 2018/3/7.
- */
 
 public class ChannelUtils {
     private static String channel;
 
-    public static String getChannel() {
-        return getChannel(GlobalContext.getContext());
+    public static String getChannel(String defaultChannel) {
+        return getChannel(GlobalContext.getContext(), defaultChannel);
     }
 
-    public static String getChannel(Application application) {
+    public static String getChannel(Application application, String defaultChannel) {
 
         if (TextUtils.isEmpty(channel)) {
             channel = WalleChannelReader.getChannel(application);
         }
         if (TextUtils.isEmpty(channel)) {
-            channel = "hengmall";
+            channel = defaultChannel;
         }
         return channel;
     }

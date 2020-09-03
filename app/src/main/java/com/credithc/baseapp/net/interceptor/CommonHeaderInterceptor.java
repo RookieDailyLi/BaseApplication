@@ -1,9 +1,9 @@
 package com.credithc.baseapp.net.interceptor;
 
-import com.credithc.baseapp.util.ChannelUtils;
-import com.credithc.baseapp.util.LoginUtil;
+import com.credithc.baseapp.util.UserUtil;
 import com.credithc.commonlib.GlobalContext;
 import com.credithc.commonlib.util.AppUtil;
+import com.credithc.commonlib.util.ChannelUtils;
 import com.credithc.commonlib.util.OSUtils;
 
 import java.io.IOException;
@@ -32,9 +32,9 @@ public class CommonHeaderInterceptor implements Interceptor {
         headers.put("reqDate", System.currentTimeMillis() + "");
         headers.put("deviceId", AppUtil.getIMEI(GlobalContext.getContext()));
         headers.put("os", "android" + OSUtils.getSysVersion());
-        headers.put("token", LoginUtil.getToken());
+        headers.put("token", UserUtil.getToken());
         headers.put("version", AppUtil.getVersionName() + "");
-        headers.put("channel", ChannelUtils.getChannel());
+        headers.put("channel", ChannelUtils.getChannel("baseApp"));
         return headers;
     }
 }
