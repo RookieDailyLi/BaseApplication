@@ -1,6 +1,6 @@
 package com.credithc.mvp.ui.lifecycle;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 /**
 *@author liyong

@@ -1,6 +1,6 @@
 package com.credithc.baseapp.server;
 
-import android.support.annotation.StringDef;
+import androidx.annotation.StringDef;
 
 import com.credithc.baseapp.net.config.ReleaseServerConfig;
 import com.credithc.baseapp.net.config.ServerHelper;

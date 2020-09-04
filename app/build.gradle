@@ -51,8 +51,8 @@ dependencies {
     implementation project(':NetLib')
     implementation project(':CommonLib')
     implementation project(':MVP')
-    implementation rootProject.dependenciesRep.supportV7
-    implementation rootProject.dependenciesRep.design
+    implementation rootProject.dependenciesRep.appcompat
+    implementation rootProject.dependenciesRep.material
     implementation rootProject.dependenciesRep.multidex
     implementation rootProject.dependenciesRep.constraintLayout
     implementation rootProject.dependenciesRep.retrofit2

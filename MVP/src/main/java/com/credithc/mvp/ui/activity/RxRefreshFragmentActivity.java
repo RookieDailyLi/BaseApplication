@@ -1,6 +1,6 @@
 package com.credithc.mvp.ui.activity;
 
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
 
 import com.credithc.commonlib.util.ViewUtil;
 import com.credithc.mvp.R;

@@ -3,7 +3,7 @@ package com.credithc.baseapp.ui.main.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.IntDef;
+import androidx.annotation.IntDef;
 
 import com.credithc.baseapp.R;
 import com.credithc.baseapp.ui.main.fragment.HomeFragment;

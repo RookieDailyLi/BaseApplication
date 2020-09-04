@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation rootProject.dependenciesRep.supportV7
+    implementation rootProject.dependenciesRep.appcompat
     implementation rootProject.dependenciesRep.recyclerview
     implementation rootProject.dependenciesRep.logger
     implementation rootProject.dependenciesRep.Gson

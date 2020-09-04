@@ -1,7 +1,7 @@
 package com.credithc.commonlib.widget;
 
-import android.support.annotation.ColorInt;
-import android.support.annotation.Px;
+import androidx.annotation.ColorInt;
+import androidx.annotation.Px;
 import android.util.TypedValue;
 import android.widget.LinearLayout;
 import android.widget.TextView;

@@ -1,6 +1,6 @@
 package com.credithc.baseapp.lifecycle;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.credithc.baseapp.helper.LeakCanaryHelper;
 import com.credithc.mvp.ui.lifecycle.IFragmentLifecycle;

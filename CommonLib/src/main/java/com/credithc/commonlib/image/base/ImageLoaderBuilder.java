@@ -2,7 +2,7 @@ package com.credithc.commonlib.image.base;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.widget.ImageView;
 
 import com.credithc.commonlib.R;

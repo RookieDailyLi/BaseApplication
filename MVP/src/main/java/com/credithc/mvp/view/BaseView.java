@@ -1,6 +1,6 @@
 package com.credithc.mvp.view;
 
-import android.arch.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LifecycleObserver;
 
 import com.credithc.mvp.ui.exception.base.ILoadCovers;
 import com.credithc.mvp.ui.exception.base.ILoadEmpty;

@@ -1,6 +1,6 @@
 package com.credithc.commonlib.util;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 /**
  * Created by lwj on 2018/10/31.

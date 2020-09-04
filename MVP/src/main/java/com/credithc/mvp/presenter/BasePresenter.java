@@ -1,16 +1,10 @@
 package com.credithc.mvp.presenter;
 
-import android.arch.lifecycle.Lifecycle;
-import android.arch.lifecycle.LifecycleObserver;
-import android.arch.lifecycle.OnLifecycleEvent;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.OnLifecycleEvent;
 
 import com.credithc.mvp.model.BaseModel;
-import com.credithc.mvp.ui.exception.base.ILoadCovers;
-import com.credithc.mvp.ui.exception.base.ILoadEmpty;
-import com.credithc.mvp.ui.exception.base.ILoadFailure;
-import com.credithc.mvp.ui.exception.base.ILoading;
-import com.credithc.mvp.ui.exception.base.INetException;
-import com.credithc.mvp.ui.exception.base.IToast;
 import com.credithc.mvp.view.BaseView;
 
 /**

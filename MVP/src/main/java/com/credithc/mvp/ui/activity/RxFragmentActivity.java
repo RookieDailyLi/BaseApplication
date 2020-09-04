@@ -1,6 +1,6 @@
 package com.credithc.mvp.ui.activity;
 
-import android.arch.lifecycle.Lifecycle;
+import androidx.lifecycle.Lifecycle;
 
 import com.credithc.mvp.presenter.RxBasePresenter;
 import com.credithc.mvp.view.RxBaseView;

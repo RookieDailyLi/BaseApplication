@@ -1,9 +1,8 @@
 package com.credithc.netlib.callback;
 
-import android.support.annotation.UiThread;
+import androidx.annotation.UiThread;
 
 import com.credithc.netlib.bean.ResultModel;
-import com.credithc.netlib.constant.APICode;
 
 
 /**

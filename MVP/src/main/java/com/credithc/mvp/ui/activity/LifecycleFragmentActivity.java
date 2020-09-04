@@ -2,8 +2,8 @@ package com.credithc.mvp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import com.credithc.mvp.ui.lifecycle.ActivityLifecycle;
 

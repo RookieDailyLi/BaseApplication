@@ -1,6 +1,6 @@
 package com.credithc.mvp.ui.activity;
 
-import android.arch.lifecycle.LifecycleObserver;
+import androidx.lifecycle.LifecycleObserver;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;

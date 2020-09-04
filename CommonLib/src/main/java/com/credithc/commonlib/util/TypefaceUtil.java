@@ -2,8 +2,8 @@ package com.credithc.commonlib.util;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
-import android.support.annotation.FontRes;
-import android.support.v4.content.res.ResourcesCompat;
+import androidx.annotation.FontRes;
+import androidx.core.content.res.ResourcesCompat;
 import android.widget.TextView;
 
 
