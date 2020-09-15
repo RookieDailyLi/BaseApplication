@@ -2,7 +2,7 @@ package com.credithc.baseapp.net.config;
 
 
 import com.credithc.baseapp.BuildConfig;
-import com.credithc.commonlib.server.IServerConfig;
+import com.credithc.common.server.IServerConfig;
 
 /**
  * @author liyong

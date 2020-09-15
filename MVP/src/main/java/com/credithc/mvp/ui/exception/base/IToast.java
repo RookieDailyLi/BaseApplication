@@ -3,9 +3,9 @@ package com.credithc.mvp.ui.exception.base;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.credithc.commonlib.GlobalContext;
-import com.credithc.commonlib.util.ResUtil;
-import com.credithc.commonlib.util.ToastUtil;
+import com.credithc.common.GlobalContext;
+import com.credithc.common.util.ResUtil;
+import com.credithc.common.util.ToastUtil;
 
 /**
 *@author liyong

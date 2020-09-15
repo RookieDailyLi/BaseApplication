@@ -7,9 +7,9 @@ import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
 import com.credithc.baseapp.example.model.ExampleModel;
 import com.credithc.baseapp.example.presenter.ExamplePresenter;
-import com.credithc.commonlib.util.ToastUtil;
+import com.credithc.common.util.ToastUtil;
 import com.credithc.mvp.ui.activity.RxRefreshFragmentActivity;
-import com.credithc.netlib.bean.ResultModel;
+import com.credithc.net.bean.ResultModel;
 
 /**
  * @author liyong

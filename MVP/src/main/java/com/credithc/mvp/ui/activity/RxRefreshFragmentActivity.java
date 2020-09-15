@@ -2,7 +2,7 @@ package com.credithc.mvp.ui.activity;
 
 import androidx.annotation.CallSuper;
 
-import com.credithc.commonlib.util.ViewUtil;
+import com.credithc.common.util.ViewUtil;
 import com.credithc.mvp.R;
 import com.credithc.mvp.presenter.RxBasePresenter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;

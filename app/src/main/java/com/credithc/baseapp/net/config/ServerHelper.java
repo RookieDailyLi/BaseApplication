@@ -1,7 +1,7 @@
 package com.credithc.baseapp.net.config;
 
-import com.credithc.commonlib.server.HCServerHelper;
-import com.credithc.commonlib.util.AES;
+import com.credithc.common.server.HCServerHelper;
+import com.credithc.common.util.AES;
 
 /**
  * @author liyong

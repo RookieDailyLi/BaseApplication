@@ -5,7 +5,7 @@ import com.credithc.baseapp.helper.LeakCanaryHelper;
 import com.credithc.baseapp.helper.RouterDebugHelper;
 import com.credithc.baseapp.lifecycle.FragmentLeakCanaryLifecycle;
 import com.credithc.baseapp.server.ServerManager;
-import com.credithc.commonlib.util.ResUtil;
+import com.credithc.common.util.ResUtil;
 import com.credithc.mvp.ui.lifecycle.ActivityLogLifecycle;
 import com.credithc.mvp.ui.lifecycle.FragmentLogLifecycle;
 

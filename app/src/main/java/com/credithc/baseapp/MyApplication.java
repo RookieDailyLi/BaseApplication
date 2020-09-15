@@ -3,21 +3,27 @@ package com.credithc.baseapp;
 import android.app.Application;
 import android.content.Context;
 import androidx.multidex.MultiDex;
+import okhttp3.OkHttpClient;
 
 import com.credithc.baseapp.helper.HotFixHelper;
+import com.credithc.baseapp.net.RetrofitService;
+import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.baseapp.net.interceptor.CommonHeaderInterceptor;
 import com.credithc.baseapp.net.interceptor.RequestEncryptInterceptor;
 import com.credithc.baseapp.net.interceptor.ResponseDecryptInterceptor;
 import com.credithc.baseapp.net.interceptor.ResponseGzipInterceptor;
 import com.credithc.baseapp.util.GlobalTools;
-import com.credithc.commonlib.GlobalContext;
-import com.credithc.commonlib.util.AppUtil;
+import com.credithc.common.GlobalContext;
+import com.credithc.common.util.AppUtil;
 import com.credithc.mvp.ui.lifecycle.ActivityLifecycle;
 import com.credithc.mvp.ui.lifecycle.CommonActivityLifeCycle;
 import com.credithc.mvp.ui.lifecycle.FragmentLifecycle;
 import com.credithc.mvp.ui.lifecycle.IActivityLifecycle;
 import com.credithc.mvp.ui.lifecycle.IFragmentLifecycle;
-import com.credithc.netlib.okhttp.OkHttpInstance;
+import com.credithc.net.okhttp.OkHttpInstance;
+import com.credithc.net.retrofit.service.ApiService;
+import com.credithc.net.retrofit.ApiServiceManager;
+import com.credithc.net.retrofit.factory.NetConverterFactory;
 
 /**
  * @author liyong
@@ -53,12 +59,23 @@ public class MyApplication extends Application {
         initOkHttp();
     }
 
+    @SuppressWarnings("unchecked")
     protected void initOkHttp() {
-        OkHttpInstance.getInstance().init(OkHttpInstance.defaultBuilder
+        OkHttpClient okHttpClient = OkHttpInstance.newInstance().createOkHttpClient(OkHttpInstance.defaultBuilder
                 .addInterceptor(new CommonHeaderInterceptor())
                 .addInterceptor(new RequestEncryptInterceptor())  // 请求参数加密拦截器
                 .addNetworkInterceptor(new ResponseDecryptInterceptor()) // 响应解密拦截器
                 .addNetworkInterceptor(new ResponseGzipInterceptor()));// 响应解密拦截器);
+
+        ApiService apiService = new ApiService.Builder()
+                .baseUrl(ServerHelper.getInstance().getHostURL())
+                .client(okHttpClient)
+                .service(RetrofitService.class)
+                .converterFactory(NetConverterFactory.create())
+                .build();
+
+        ApiServiceManager.addApiService(apiService);
+
     }
 
     protected final void addActivityLifeCycle(IActivityLifecycle activityLife) {

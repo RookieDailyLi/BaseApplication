@@ -6,7 +6,7 @@ import com.credithc.baseapp.net.config.ReleaseServerConfig;
 import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.baseapp.server.config.PreServerConfig;
 import com.credithc.baseapp.server.config.TestServerConfig;
-import com.credithc.commonlib.server.IServerConfig;
+import com.credithc.common.server.IServerConfig;
 
 import java.lang.annotation.Retention;
 import java.util.HashMap;

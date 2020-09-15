@@ -2,7 +2,7 @@ package com.credithc.mvp.ui.exception.base;
 
 import androidx.annotation.DrawableRes;
 
-import com.credithc.commonlib.util.ResUtil;
+import com.credithc.common.util.ResUtil;
 import com.credithc.mvp.R;
 
 

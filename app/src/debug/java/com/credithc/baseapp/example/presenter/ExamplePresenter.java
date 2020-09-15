@@ -4,7 +4,7 @@ import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
 import com.credithc.baseapp.net.callback.DefaultResponseCallBack;
 import com.credithc.mvp.presenter.RxBasePresenter;
-import com.credithc.netlib.bean.ResultModel;
+import com.credithc.net.bean.ResultModel;
 
 /**
  * @author liyong

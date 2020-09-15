@@ -1,6 +1,6 @@
 package com.credithc.baseapp.bean.req;
 
-import com.credithc.netlib.bean.IRequest;
+import com.credithc.net.bean.IRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;

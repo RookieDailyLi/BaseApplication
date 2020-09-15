@@ -3,9 +3,9 @@ package com.credithc.mvp.ui.lifecycle;
 import android.app.Activity;
 import android.view.WindowManager;
 
-import com.credithc.commonlib.util.ActivityManager;
-import com.credithc.commonlib.util.AppUtil;
-import com.credithc.commonlib.util.LoadingUtil;
+import com.credithc.common.util.ActivityManager;
+import com.credithc.common.util.AppUtil;
+import com.credithc.common.util.LoadingUtil;
 
 
 /**

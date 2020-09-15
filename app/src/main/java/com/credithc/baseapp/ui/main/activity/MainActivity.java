@@ -9,9 +9,9 @@ import com.credithc.baseapp.R;
 import com.credithc.baseapp.ui.main.fragment.HomeFragment;
 import com.credithc.baseapp.ui.main.fragment.MineFragment;
 import com.credithc.baseapp.ui.main.fragment.ProjectFragment;
-import com.credithc.commonlib.util.AppUtil;
-import com.credithc.commonlib.util.ToastUtil;
-import com.credithc.commonlib.widget.TabManager;
+import com.credithc.common.util.AppUtil;
+import com.credithc.common.util.ToastUtil;
+import com.credithc.common.widget.TabManager;
 import com.credithc.mvp.presenter.BasePresenter;
 import com.credithc.mvp.ui.activity.RxFragmentActivity;
 

@@ -1,23 +1,24 @@
 package com.credithc.mvp.ui.fragment;
 
-import androidx.lifecycle.LifecycleObserver;
 import android.graphics.Color;
 import android.os.Bundle;
-import androidx.annotation.IdRes;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-import com.credithc.commonlib.util.LoadingUtil;
-import com.credithc.commonlib.util.ViewUtil;
+import com.credithc.common.util.LoadingUtil;
+import com.credithc.common.util.ViewUtil;
 import com.credithc.mvp.R;
 import com.credithc.mvp.presenter.BasePresenter;
 import com.credithc.mvp.ui.exception.BaseExceptionLayout;
 import com.credithc.mvp.ui.exception.ExceptionLayout;
 import com.credithc.mvp.view.BaseView;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.LifecycleObserver;
 
 /**
  * @author liyong
@@ -84,9 +85,9 @@ public abstract class BaseFragment<P extends BasePresenter> extends DefaultFragm
         }
     }
 
-    public abstract P createPresenter();
-
     protected abstract int layoutContentId();
+
+    public abstract P createPresenter();
 
     protected abstract void initView(View view);
 

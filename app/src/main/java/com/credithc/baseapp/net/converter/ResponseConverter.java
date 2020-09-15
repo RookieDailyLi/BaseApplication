@@ -1,9 +1,9 @@
 package com.credithc.baseapp.net.converter;
 
-import com.credithc.commonlib.util.JSONUtil;
-import com.credithc.netlib.bean.NoneBodyBean;
-import com.credithc.netlib.bean.ResultModel;
-import com.credithc.netlib.okhttp.converter.IRespConverter;
+import com.credithc.common.util.JSONUtil;
+import com.credithc.net.bean.NoneBodyBean;
+import com.credithc.net.bean.ResultModel;
+import com.credithc.net.okhttp.converter.IRespConverter;
 
 import org.json.JSONObject;
 
@@ -15,7 +15,11 @@ import okhttp3.ResponseBody;
 /**
  * @author liyong
  * @date 2020/9/1 10:56
- * @description
+ * @description 网络响应处理，适用于格式
+ * {
+ * "head":{"code":"0000","msg":"成功"},
+ * "body":{"key":"value"}
+ * }
  */
 public class ResponseConverter implements IRespConverter {
 

@@ -1,10 +1,10 @@
 package com.credithc.baseapp.net.interceptor;
 
 import com.credithc.baseapp.util.UserUtil;
-import com.credithc.commonlib.GlobalContext;
-import com.credithc.commonlib.util.AppUtil;
-import com.credithc.commonlib.util.ChannelUtils;
-import com.credithc.commonlib.util.OSUtils;
+import com.credithc.common.GlobalContext;
+import com.credithc.common.util.AppUtil;
+import com.credithc.common.util.ChannelUtils;
+import com.credithc.common.util.OSUtils;
 
 import java.io.IOException;
 import java.util.HashMap;

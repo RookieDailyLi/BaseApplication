@@ -48,8 +48,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':NetLib')
-    implementation project(':CommonLib')
+    implementation project(':Net')
+    implementation project(':Common')
     implementation project(':MVP')
     implementation rootProject.dependenciesRep.appcompat
     implementation rootProject.dependenciesRep.material

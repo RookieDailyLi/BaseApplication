@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':CommonLib')
+    implementation project(':Common')
     implementation rootProject.dependenciesRep.appcompat
     implementation rootProject.dependenciesRep.constraintLayout
     implementation rootProject.dependenciesRep.rxJava

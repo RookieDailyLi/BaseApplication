@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.credithc.commonlib.util.LoadingUtil;
-import com.credithc.commonlib.util.ResUtil;
-import com.credithc.commonlib.util.ViewUtil;
-import com.credithc.commonlib.widget.TitleBar;
+import com.credithc.common.util.LoadingUtil;
+import com.credithc.common.util.ResUtil;
+import com.credithc.common.util.ViewUtil;
+import com.credithc.common.widget.TitleBar;
 import com.credithc.mvp.R;
 import com.credithc.mvp.presenter.BasePresenter;
 import com.credithc.mvp.ui.exception.BaseExceptionLayout;

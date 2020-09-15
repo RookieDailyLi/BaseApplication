@@ -6,9 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.credithc.commonlib.util.NetUtil;
-import com.credithc.commonlib.util.ToastUtil;
-import com.credithc.commonlib.util.ViewUtil;
+import com.credithc.common.util.NetUtil;
+import com.credithc.common.util.ToastUtil;
+import com.credithc.common.util.ViewUtil;
 import com.credithc.mvp.R;
 import com.credithc.mvp.presenter.RxBasePresenter;
 import com.credithc.mvp.view.RxBaseView;

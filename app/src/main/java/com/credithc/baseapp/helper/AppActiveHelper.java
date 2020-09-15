@@ -9,9 +9,9 @@ import android.text.TextUtils;
 
 import com.credithc.baseapp.util.LoginUtil;
 import com.credithc.baseapp.util.UserUtil;
-import com.credithc.commonlib.util.BroadcastUtil;
-import com.credithc.commonlib.util.SPManager;
-import com.credithc.commonlib.widget.DefaultActivityLifecycleCallbacks;
+import com.credithc.common.util.BroadcastUtil;
+import com.credithc.common.util.SPManager;
+import com.credithc.common.widget.DefaultActivityLifecycleCallbacks;
 
 import java.util.Date;
 

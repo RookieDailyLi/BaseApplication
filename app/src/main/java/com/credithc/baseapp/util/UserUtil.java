@@ -2,7 +2,7 @@ package com.credithc.baseapp.util;
 
 import android.text.TextUtils;
 
-import com.credithc.commonlib.util.SPManager;
+import com.credithc.common.util.SPManager;
 
 /**
  * @author liyong

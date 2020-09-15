@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.credithc.commonlib.widget.TitleBar
+    <com.credithc.common.widget.TitleBar
         android:id="@+id/titleBar"
         style="@style/TitleBar"
         android:layout_width="match_parent"

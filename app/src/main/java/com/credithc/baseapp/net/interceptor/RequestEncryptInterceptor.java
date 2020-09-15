@@ -1,8 +1,8 @@
 package com.credithc.baseapp.net.interceptor;
 
 import com.credithc.baseapp.net.config.ServerHelper;
-import com.credithc.commonlib.util.LogUtil;
-import com.credithc.commonlib.util.StringUtil;
+import com.credithc.common.util.LogUtil;
+import com.credithc.common.util.StringUtil;
 
 import java.io.IOException;
 

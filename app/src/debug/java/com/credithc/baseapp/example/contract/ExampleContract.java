@@ -3,7 +3,7 @@ package com.credithc.baseapp.example.contract;
 import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.mvp.model.BaseModel;
 import com.credithc.mvp.view.RxBaseView;
-import com.credithc.netlib.bean.ResultModel;
+import com.credithc.net.bean.ResultModel;
 
 import io.reactivex.Observable;
 

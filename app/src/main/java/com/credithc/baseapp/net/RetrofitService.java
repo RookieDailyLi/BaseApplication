@@ -1,7 +1,7 @@
 package com.credithc.baseapp.net;
 
 import com.credithc.baseapp.bean.resp.HomeBannerListBean;
-import com.credithc.netlib.bean.ResultModel;
+import com.credithc.net.bean.ResultModel;
 
 import io.reactivex.Observable;
 import retrofit2.http.POST;

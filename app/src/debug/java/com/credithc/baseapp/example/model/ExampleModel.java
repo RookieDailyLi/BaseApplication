@@ -2,8 +2,9 @@ package com.credithc.baseapp.example.model;
 
 import com.credithc.baseapp.bean.resp.HomeBannerListBean;
 import com.credithc.baseapp.example.contract.ExampleContract;
-import com.credithc.baseapp.net.RetrofitClient;
-import com.credithc.netlib.bean.ResultModel;
+import com.credithc.baseapp.net.RetrofitService;
+import com.credithc.net.bean.ResultModel;
+import com.credithc.net.retrofit.ApiServiceManager;
 
 import io.reactivex.Observable;
 
@@ -16,6 +17,6 @@ public class ExampleModel implements ExampleContract.Model {
     @Override
     public Observable<ResultModel<HomeBannerListBean>> testApiReq() {
         //如果接口有请求参数，在这里组装请求参数
-        return RetrofitClient.createService().reqBanner();
+        return ApiServiceManager.getApiService(RetrofitService.class).reqBanner();
     }
 }

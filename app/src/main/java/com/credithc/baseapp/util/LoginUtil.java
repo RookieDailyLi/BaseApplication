@@ -2,7 +2,8 @@ package com.credithc.baseapp.util;
 
 import android.text.TextUtils;
 
-import com.credithc.commonlib.event.LoginEvent;
+
+import com.credithc.baseapp.event.LoginEvent;
 
 import org.greenrobot.eventbus.EventBus;
 

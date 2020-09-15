@@ -3,7 +3,7 @@ package com.credithc.baseapp.helper;
 import android.app.Application;
 
 import com.credithc.baseapp.BuildConfig;
-import com.credithc.commonlib.util.ChannelUtils;
+import com.credithc.common.util.ChannelUtils;
 import com.tencent.bugly.Bugly;
 import com.tencent.bugly.beta.Beta;
 
