@@ -97,6 +97,8 @@ ext {
             //https://github.com/alibaba/ARouter
             arouterApi                      : 'com.alibaba:arouter-api:1.4.1',
             arouterCompiler                 : 'com.alibaba:arouter-compiler:1.2.2',
+            //https://github.com/lzyzsd/JsBridge
+            jsbridge        : "com.github.lzyzsd:jsbridge:1.0.4",
     ]
 
 }

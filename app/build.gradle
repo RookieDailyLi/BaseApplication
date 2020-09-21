@@ -73,6 +73,7 @@ dependencies {
     implementation rootProject.dependenciesRep.blockcanary
     implementation rootProject.dependenciesRep.arouterApi
     annotationProcessor rootProject.dependenciesRep.arouterCompiler
+    implementation rootProject.dependenciesRep.jsbridge
 
 
 }

@@ -104,6 +104,10 @@ public final class NetUtil {
         return getAPNType() == TYPE_4G;
     }
 
+    public static boolean is5GConnected() {
+        return getAPNType() == TYPE_5G;
+    }
+
 
 }
 

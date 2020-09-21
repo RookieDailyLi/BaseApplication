@@ -82,12 +82,12 @@ public abstract class BaseFragmentActivity<P extends BasePresenter> extends Defa
         }
     }
 
-    protected void setTitleBarGone() {
+    public void setTitleBarGone() {
         ViewUtil.setGone(mTitleBar);
         errorTopMargin = 0;
     }
 
-    protected void setTitleBarVisible() {
+    public void setTitleBarVisible() {
         ViewUtil.setVisible(mTitleBar);
         errorTopMargin = ResUtil.getDimen(R.dimen.title_bar_height);
     }

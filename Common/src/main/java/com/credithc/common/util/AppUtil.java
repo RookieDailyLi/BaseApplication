@@ -43,6 +43,10 @@ public final class AppUtil {
         }
     }
 
+    public static String getAppName() {
+        int labelRes = getPackageInfo().applicationInfo.labelRes;
+        return ResUtil.getString(labelRes);
+    }
 
     public static String getVersionName() {
         return getPackageInfo().versionName;
