@@ -13,7 +13,7 @@ import com.credithc.common.util.AppUtil;
 import com.credithc.common.util.ToastUtil;
 import com.credithc.common.widget.TabManager;
 import com.credithc.mvp.presenter.BasePresenter;
-import com.credithc.mvp.ui.activity.RxFragmentActivity;
+import com.credithc.mvp.view.activity.RxFragmentActivity;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

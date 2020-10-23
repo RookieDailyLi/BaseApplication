@@ -13,7 +13,7 @@ import com.credithc.baseapp.ui.web.handler.JsHandlerForActivity;
 import com.credithc.baseapp.ui.web.widget.MyBridgeWebView;
 import com.credithc.common.util.NetUtil;
 import com.credithc.mvp.presenter.BasePresenter;
-import com.credithc.mvp.ui.activity.BaseFragmentActivity;
+import com.credithc.mvp.view.activity.BaseFragmentActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;

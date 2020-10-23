@@ -15,11 +15,10 @@ import com.credithc.baseapp.net.interceptor.ResponseGzipInterceptor;
 import com.credithc.baseapp.util.GlobalTools;
 import com.credithc.common.GlobalContext;
 import com.credithc.common.util.AppUtil;
-import com.credithc.mvp.ui.lifecycle.ActivityLifecycle;
-import com.credithc.mvp.ui.lifecycle.CommonActivityLifeCycle;
-import com.credithc.mvp.ui.lifecycle.FragmentLifecycle;
-import com.credithc.mvp.ui.lifecycle.IActivityLifecycle;
-import com.credithc.mvp.ui.lifecycle.IFragmentLifecycle;
+import com.credithc.mvp.lifecycle.ActivityLifecyclePublisher;
+import com.credithc.mvp.lifecycle.FragmentLifecyclePublisher;
+import com.credithc.mvp.lifecycle.IActLifeSubscriber;
+import com.credithc.mvp.lifecycle.IFragLifeSubscriber;
 import com.credithc.net.okhttp.OkHttpInstance;
 import com.credithc.net.retrofit.service.ApiService;
 import com.credithc.net.retrofit.ApiServiceManager;
@@ -52,7 +51,6 @@ public class MyApplication extends Application {
     protected void onceInstall() {
         GlobalTools.installLog(BuildConfig.SHOW_LOG);
         HotFixHelper.init(this);
-        addActivityLifeCycle(new CommonActivityLifeCycle());
     }
 
     protected void delayInstall() {
@@ -78,11 +76,11 @@ public class MyApplication extends Application {
 
     }
 
-    protected final void addActivityLifeCycle(IActivityLifecycle activityLife) {
-        ActivityLifecycle.addSubscriber(activityLife);
+    protected final void addActivityLifeCycle(IActLifeSubscriber activityLife) {
+        ActivityLifecyclePublisher.addSubscriber(activityLife);
     }
 
-    protected final void addFragmentLifeCycle(IFragmentLifecycle iFragmentLife) {
-        FragmentLifecycle.addSubscriber(iFragmentLife);
+    protected final void addFragmentLifeCycle(IFragLifeSubscriber iFragmentLife) {
+        FragmentLifecyclePublisher.addSubscriber(iFragmentLife);
     }
 }

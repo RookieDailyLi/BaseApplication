@@ -74,6 +74,7 @@ dependencies {
     implementation rootProject.dependenciesRep.arouterApi
     annotationProcessor rootProject.dependenciesRep.arouterCompiler
     implementation rootProject.dependenciesRep.jsbridge
-
-
+    implementation rootProject.dependenciesRep.glide
+    implementation rootProject.dependenciesRep.glideTransform
+    annotationProcessor rootProject.dependenciesRep.glideComplier
 }

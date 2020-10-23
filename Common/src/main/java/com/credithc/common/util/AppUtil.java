@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -86,6 +87,14 @@ public final class AppUtil {
             }
         }
         return isRunning;
+    }
+
+    // 重启
+    public static void restartMySelf() {
+        Intent i = GlobalContext.getContext().getPackageManager().getLaunchIntentForPackage(GlobalContext.getContext().getPackageName());
+        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        GlobalContext.getContext().startActivity(i);
+        android.os.Process.killProcess(android.os.Process.myPid());
     }
 
     public static void shutDownApp() {

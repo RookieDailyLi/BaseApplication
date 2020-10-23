@@ -1,6 +1,7 @@
 package com.credithc.baseapp.example.activity;
 
 import android.view.View;
+import android.widget.ImageView;
 
 import com.credithc.baseapp.R;
 import com.credithc.baseapp.bean.resp.HomeBannerListBean;
@@ -8,7 +9,7 @@ import com.credithc.baseapp.example.contract.ExampleContract;
 import com.credithc.baseapp.example.model.ExampleModel;
 import com.credithc.baseapp.example.presenter.ExamplePresenter;
 import com.credithc.common.util.ToastUtil;
-import com.credithc.mvp.ui.activity.RxRefreshFragmentActivity;
+import com.credithc.mvp.view.activity.RxRefreshFragmentActivity;
 import com.credithc.net.bean.ResultModel;
 
 /**
@@ -38,7 +39,7 @@ public class ExampleApiActivity extends RxRefreshFragmentActivity<ExamplePresent
                         presenter.testApi();
                     }
                 });
-
+        ImageView imageView;
     }
 
 

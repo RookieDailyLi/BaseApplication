@@ -99,6 +99,10 @@ ext {
             arouterCompiler                 : 'com.alibaba:arouter-compiler:1.2.2',
             //https://github.com/lzyzsd/JsBridge
             jsbridge        : "com.github.lzyzsd:jsbridge:1.0.4",
+            //https://github.com/bumptech/glide
+            glide           : 'com.github.bumptech.glide:glide:4.11.0',
+            glideComplier   : 'com.github.bumptech.glide:compiler:4.11.0',
+            glideTransform  : 'jp.wasabeef:glide-transformations:4.1.0',
     ]
 
 }

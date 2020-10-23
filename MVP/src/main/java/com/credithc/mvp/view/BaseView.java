@@ -2,12 +2,12 @@ package com.credithc.mvp.view;
 
 import androidx.lifecycle.LifecycleObserver;
 
-import com.credithc.mvp.ui.exception.base.ILoadCovers;
-import com.credithc.mvp.ui.exception.base.ILoadEmpty;
-import com.credithc.mvp.ui.exception.base.ILoadFailure;
-import com.credithc.mvp.ui.exception.base.ILoading;
-import com.credithc.mvp.ui.exception.base.INetException;
-import com.credithc.mvp.ui.exception.base.IToast;
+import com.credithc.mvp.error.base.ILoadCovers;
+import com.credithc.mvp.error.base.ILoadEmpty;
+import com.credithc.mvp.error.base.ILoadFailure;
+import com.credithc.mvp.error.base.ILoading;
+import com.credithc.mvp.error.base.INetException;
+import com.credithc.mvp.error.base.IToast;
 
 /**
  * @author liyong

@@ -10,6 +10,10 @@
         <activity android:name=".example.activity.ExampleApiActivity"
             android:screenOrientation="portrait">
         </activity>
+
+        <activity android:name=".example.activity.ServerSwitchActivity"
+            android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

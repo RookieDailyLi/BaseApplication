@@ -13,7 +13,7 @@ import com.credithc.baseapp.ui.web.handler.JsHandlerForFragment;
 import com.credithc.baseapp.ui.web.widget.MyBridgeWebView;
 import com.credithc.common.util.NetUtil;
 import com.credithc.mvp.presenter.BasePresenter;
-import com.credithc.mvp.ui.fragment.RxFragment;
+import com.credithc.mvp.view.fragment.RxFragment;
 import com.credithc.mvp.view.RxBaseView;
 
 import org.json.JSONException;

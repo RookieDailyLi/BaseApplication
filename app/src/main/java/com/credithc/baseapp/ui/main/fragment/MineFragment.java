@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.credithc.baseapp.R;
 import com.credithc.mvp.presenter.BasePresenter;
-import com.credithc.mvp.ui.fragment.RxRefreshFragment;
+import com.credithc.mvp.view.fragment.RxRefreshFragment;
 
 /**
  * @author liyong
