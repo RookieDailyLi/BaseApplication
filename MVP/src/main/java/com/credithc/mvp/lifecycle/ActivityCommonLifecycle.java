@@ -1,4 +1,4 @@
-package com.credithc.baseapp.lifecycle;
+package com.credithc.mvp.lifecycle;
 
 import android.app.Activity;
 import android.view.WindowManager;

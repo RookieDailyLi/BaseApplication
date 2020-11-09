@@ -3,7 +3,7 @@ package com.credithc.baseapp;
 import com.credithc.baseapp.helper.BlockCanaryHelper;
 import com.credithc.baseapp.helper.LeakCanaryHelper;
 import com.credithc.baseapp.helper.RouterDebugHelper;
-import com.credithc.baseapp.lifecycle.ActivityCommonLifecycle;
+import com.credithc.mvp.lifecycle.ActivityCommonLifecycle;
 import com.credithc.baseapp.lifecycle.ActivityServerConfigLifecycle;
 import com.credithc.baseapp.lifecycle.FragmentLeakCanaryLifecycle;
 import com.credithc.baseapp.server.ServerManager;

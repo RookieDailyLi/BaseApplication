@@ -11,7 +11,7 @@ import retrofit2.http.POST;
  * @date 2019/10/18
  * @des
  */
-public interface RetrofitService {
+public interface RetrofitApiService {
 
     @POST("sysBanner/getReleaseBanners")
     Observable<ResultModel<HomeBannerListBean>> reqBanner();

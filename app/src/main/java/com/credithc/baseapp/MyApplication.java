@@ -2,11 +2,9 @@ package com.credithc.baseapp;
 
 import android.app.Application;
 import android.content.Context;
-import androidx.multidex.MultiDex;
-import okhttp3.OkHttpClient;
 
 import com.credithc.baseapp.helper.HotFixHelper;
-import com.credithc.baseapp.net.RetrofitService;
+import com.credithc.baseapp.net.RetrofitHelper;
 import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.baseapp.net.interceptor.CommonHeaderInterceptor;
 import com.credithc.baseapp.net.interceptor.RequestEncryptInterceptor;
@@ -20,9 +18,12 @@ import com.credithc.mvp.lifecycle.FragmentLifecyclePublisher;
 import com.credithc.mvp.lifecycle.IActLifeSubscriber;
 import com.credithc.mvp.lifecycle.IFragLifeSubscriber;
 import com.credithc.net.okhttp.OkHttpInstance;
-import com.credithc.net.retrofit.service.ApiService;
-import com.credithc.net.retrofit.ApiServiceManager;
 import com.credithc.net.retrofit.factory.NetConverterFactory;
+
+import androidx.multidex.MultiDex;
+import okhttp3.OkHttpClient;
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 /**
  * @author liyong
@@ -65,15 +66,14 @@ public class MyApplication extends Application {
                 .addNetworkInterceptor(new ResponseDecryptInterceptor()) // 响应解密拦截器
                 .addNetworkInterceptor(new ResponseGzipInterceptor()));// 响应解密拦截器);
 
-        ApiService apiService = new ApiService.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(ServerHelper.getInstance().getHostURL())
                 .client(okHttpClient)
-                .service(RetrofitService.class)
-                .converterFactory(NetConverterFactory.create())
+                .addConverterFactory(NetConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
 
-        ApiServiceManager.addApiService(apiService);
-
+        RetrofitHelper.addRetrofit(ServerHelper.getInstance().getHostURL(), retrofit);
     }
 
     protected final void addActivityLifeCycle(IActLifeSubscriber activityLife) {
