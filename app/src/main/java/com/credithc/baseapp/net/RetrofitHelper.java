@@ -24,7 +24,11 @@ public class RetrofitHelper {
         return retrofitHashMap.get(url);
     }
 
-    public static <T> T getRetrofitApi(String url, Class<T> objCls) {
+    public static RetrofitApiService createDefaultRetrofitApi() {
+        return createRetrofitApi(ServerHelper.getInstance().getHostURL(), RetrofitApiService.class);
+    }
+
+    public static <T> T createRetrofitApi(String url, Class<T> objCls) {
         Retrofit retrofit = getRetrofit(url);
         if (retrofit == null) {
             throw new RuntimeException("Retrofit实例未初始化");
@@ -33,7 +37,4 @@ public class RetrofitHelper {
         return retrofit.create(objCls);
     }
 
-    public static RetrofitApiService getDefaultRetrofitApi() {
-        return getRetrofitApi(ServerHelper.getInstance().getHostURL(), RetrofitApiService.class);
-    }
 }
