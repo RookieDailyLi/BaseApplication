@@ -29,6 +29,6 @@ public class DebugApplication extends MyApplication {
         addActivityLifeCycle(new ActivityLogLifecycle(ResUtil.getString(R.string.app_name)));
         addFragmentLifeCycle(new FragmentLogLifecycle(ResUtil.getString(R.string.app_name)));
         addFragmentLifeCycle(new FragmentLeakCanaryLifecycle());
-        ServerManager.config(ServerManager.ServerTestType);
+        ServerManager.config(ServerManager.ServerReleaseType);
     }
 }

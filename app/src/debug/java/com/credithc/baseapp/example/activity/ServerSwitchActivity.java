@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.credithc.baseapp.BuildConfig;
 import com.credithc.baseapp.R;
+import com.credithc.baseapp.global.Test;
 import com.credithc.baseapp.lifecycle.ActivityServerConfigLifecycle;
+import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.baseapp.server.ServerManager;
 import com.credithc.baseapp.util.UserUtil;
+import com.credithc.common.util.AES;
 import com.credithc.common.util.ActivityManager;
 import com.credithc.common.util.ActivityUtil;
 import com.credithc.common.util.AppUtil;
@@ -25,20 +30,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
- *切换服务器环境
+ * 切换服务器环境
  */
 public class ServerSwitchActivity extends AppCompatActivity {
 
-    public RadioGroup rg_server_switch;
-    public TextView tv_current_server;
-    public LinearLayout ll_root;
-
+    RadioGroup rg_server_switch;
+    TextView tv_current_server, tv_cipher;
+    LinearLayout ll_root;
+    EditText et_clear;
 
     public static void launch(Context context) {
         ActivityUtil.startActivity(context, ServerSwitchActivity.class);
     }
 
-//    private String preServerType;
     private String selectedServerType;
 
     @Override
@@ -49,11 +53,11 @@ public class ServerSwitchActivity extends AppCompatActivity {
         ll_root = findViewById(R.id.ll_root);
         rg_server_switch = findViewById(R.id.rg_server_switch);
         tv_current_server = findViewById(R.id.tv_current_server);
+        et_clear = findViewById(R.id.et_clear);
+        tv_cipher = findViewById(R.id.tv_cipher);
 
-//        preServerType = SPManager.getManager(ActivityServerConfigLifecycle.SERVER_CONFIG).getString(ActivityServerConfigLifecycle.SERVER_TYPE);
+
         selectedServerType = ServerManager.currentServerType;
-
-
         StringBuilder sb = new StringBuilder("当前环境：").append(ServerManager.currentServerType);
         tv_current_server.setText(sb);
         switch (ServerManager.currentServerType) {
@@ -88,7 +92,7 @@ public class ServerSwitchActivity extends AppCompatActivity {
         });
 
 
-        createView("切换环境").setOnClickListener(new View.OnClickListener() {
+        createView("点击切换环境").setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (selectedServerType.equals(ServerManager.currentServerType)) {
@@ -101,6 +105,22 @@ public class ServerSwitchActivity extends AppCompatActivity {
                     ActivityManager.popAll();
                     AppUtil.restartMySelf();
                 }
+            }
+        });
+
+        createView("加密测试").setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String clearText = et_clear.getText().toString();
+                String cipherText = ServerHelper.getInstance().encryptData(clearText);
+                tv_cipher.setText(cipherText);
+            }
+        });
+
+        createView("测试多线程").setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Test.multipleThread();
             }
         });
     }
