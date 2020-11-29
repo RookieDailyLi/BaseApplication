@@ -24,6 +24,12 @@ public class Test {
     public static void main(String[] args) {
     }
 
+    public static void insertSort(int[] srcArray) {
+        for (int i = 0; i < srcArray.length; i++) {
+
+        }
+    }
+
     public void test1() {
         Observable.create(new ObservableOnSubscribe<Integer>() {
             @Override
