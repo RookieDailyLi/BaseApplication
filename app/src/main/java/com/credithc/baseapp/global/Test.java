@@ -1,5 +1,6 @@
 package com.credithc.baseapp.global;
 
+import java.util.Arrays;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.regex.Matcher;
@@ -20,14 +21,22 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class Test {
 
-
     public static void main(String[] args) {
+        int[] array = new int[]{36,18,21,5,4,6,7,9,3,2,1,4,6,7,9,3,2,1,4,6,7,9,3,2,1};
+        System.out.println(String.format("The result of sort from small to large is %s", Arrays.toString(insertSort(array))));
     }
 
-    public static void insertSort(int[] srcArray) {
+    public static int[] insertSort(int[] srcArray) {
         for (int i = 0; i < srcArray.length; i++) {
-
+            int minValue = srcArray[i];
+            for (int j = i; j >= 0; j--) {
+                if(minValue < srcArray[j]){
+                    srcArray[j+1] = srcArray[j];
+                    srcArray[j] = minValue;
+                }
+            }
         }
+        return srcArray;
     }
 
     public void test1() {
