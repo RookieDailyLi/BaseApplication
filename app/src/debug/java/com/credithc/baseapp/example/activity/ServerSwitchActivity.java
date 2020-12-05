@@ -120,7 +120,7 @@ public class ServerSwitchActivity extends AppCompatActivity {
         createView("测试多线程").setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Test.multipleThread();
+                Test.main(null);
             }
         });
     }
