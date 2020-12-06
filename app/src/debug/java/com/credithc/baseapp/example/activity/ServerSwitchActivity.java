@@ -2,6 +2,7 @@ package com.credithc.baseapp.example.activity;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -11,22 +12,20 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.credithc.baseapp.BuildConfig;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.credithc.baseapp.R;
-import com.credithc.baseapp.global.Test;
 import com.credithc.baseapp.lifecycle.ActivityServerConfigLifecycle;
 import com.credithc.baseapp.net.config.ServerHelper;
 import com.credithc.baseapp.server.ServerManager;
 import com.credithc.baseapp.util.UserUtil;
-import com.credithc.common.util.AES;
 import com.credithc.common.util.ActivityManager;
 import com.credithc.common.util.ActivityUtil;
 import com.credithc.common.util.AppUtil;
 import com.credithc.common.util.DisplayUtil;
 import com.credithc.common.util.SPManager;
-
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 
 /**
@@ -44,6 +43,8 @@ public class ServerSwitchActivity extends AppCompatActivity {
     }
 
     private String selectedServerType;
+    ClientThread clientThread;
+    ServerThread serverThread;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -117,12 +118,34 @@ public class ServerSwitchActivity extends AppCompatActivity {
             }
         });
 
-        createView("测试多线程").setOnClickListener(new View.OnClickListener() {
+
+        createView("两个子线程双向通信").setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Test.main(null);
+                new Thread() {
+                    @Override
+                    public void run() {
+                        clientThread = new ClientThread("client");
+                        serverThread = new ServerThread("server");
+
+                        clientThread.start();
+                        serverThread.start();
+
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        clientThread.setServerHandler(serverThread.getHandler());
+                        serverThread.setClientHandler(clientThread.getHandler());
+                    }
+
+                }.start();
+
             }
         });
+
     }
 
 
