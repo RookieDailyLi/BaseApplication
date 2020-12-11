@@ -13,7 +13,7 @@ android {
         versionName rootProject.appVersion.versionName
 
         multiDexEnabled true
-        buildConfigField("boolean", "SHOW_LOG", "false")
+        buildConfigField("boolean", "SHOW_LOG", "true")
         buildConfigField("String", "Bugly_ID", "\"" + rootProject.buglyConfig.appId + "\"")
 
         javaCompileOptions {

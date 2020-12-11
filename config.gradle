@@ -20,9 +20,9 @@ ext {
     TestConfig = [
             serverTag: 'test',
             host     : 'http://118.26.173.56:8001/shopping/',
-            AES_KEY  : 'devKey1234567890',
-            IV       : 'stagePayMall0000',
-            WAY      : 'AES/CBC/PKCS5Padding',
+            AES_KEY  : '',
+            IV       : '',
+            WAY      : '',
             encrypt  : "true"
     ]
 
@@ -30,9 +30,9 @@ ext {
     PreConfig = [
             serverTag: 'pre',
             host     : 'http://118.26.173.56:8001/shopping/',
-            AES_KEY  : 'devKey1234567890',
-            IV       : 'stagePayMall0000',
-            WAY      : 'AES/CBC/PKCS5Padding',
+            AES_KEY  : '',
+            IV       : '',
+            WAY      : '',
             encrypt  : "true"
     ]
 
@@ -40,9 +40,9 @@ ext {
     ReleaseConfig = [
             serverTag: 'release',
             host     : 'https://api.alwaysego.com/shopping/',
-            AES_KEY  : 'devKey1234567890',
-            IV       : 'stagePayMall0000',
-            WAY      : 'AES/CBC/PKCS5Padding',
+            AES_KEY  : '',
+            IV       : '',
+            WAY      : '',
             encrypt  : "true"
     ]
 

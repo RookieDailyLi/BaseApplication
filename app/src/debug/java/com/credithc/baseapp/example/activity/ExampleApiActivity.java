@@ -39,7 +39,6 @@ public class ExampleApiActivity extends RxRefreshFragmentActivity<ExamplePresent
                         presenter.testApi();
                     }
                 });
-        ImageView imageView;
     }
 
 

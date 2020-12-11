@@ -21,17 +21,32 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class Test {
 
+    static int count = 5;
+
     public static void main(String[] args) {
-        int[] array = new int[]{20, 19, 18, 17, 16, 15, 14, 13,71, 12,-2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1,56};
-        new Thread() {
-            @Override
-            public void run() {
-                quickSort(array, 0, array.length - 1);
-                super.run();
-            }
-        }.start();
+//        int[] array = new int[]{20, 19, 18, 17, 16, 15, 14, 13, 71, 12, -2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 56};
+//        new Thread() {
+//            @Override
+//            public void run() {
+//                quickSort(array, 0, array.length - 1);
+//                super.run();
+//            }
+//        }.start();
 //        System.out.println(String.format("The result of sort from small to large is %s", Arrays.toString(quickSort2(array, 0, array.length - 1))));
     }
+
+
+    /**
+     * 内存溢出例子
+     *
+     * @param array
+     */
+    public static void diGui(int[] array) {
+        int[] destArray = new int[20];
+        System.arraycopy(array, 0, destArray, 0, 3);
+        diGui(destArray);
+    }
+
 
     public static int[] quickSort(int[] srcArray, int left, int right) {
         int i = left;
@@ -56,7 +71,7 @@ public class Test {
                 srcArray[j] = temp;
             }
 
-            if(i == j){
+            if (i == j) {
                 i++;
                 j--;
             }
@@ -72,7 +87,7 @@ public class Test {
 
         if (left < j) {
             //递归左半边数组
-            quickSort(srcArray, left,  j);
+            quickSort(srcArray, left, j);
         }
 
         if (right > i) {
@@ -85,7 +100,7 @@ public class Test {
     public static void quickSort2(int[] arr, int low, int high) {
         int i, j, temp, t;
         if (low > high) {
-            return ;
+            return;
         }
         i = low;
         j = high;
