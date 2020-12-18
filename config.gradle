@@ -1,7 +1,7 @@
 ext {
     appVersion = [
-            versionCode  : 1,
-            versionName  : "1.0.0"
+            versionCode: 1,
+            versionName: "1.0.0"
     ]
 
     compileVer = [
@@ -53,33 +53,33 @@ ext {
     ]
 
     dependenciesRep = [
-            appcompat           : 'androidx.appcompat:appcompat:1.0.0',
-            recyclerview        : 'androidx.recyclerview:recyclerview:1.0.0',
-            material              : 'com.google.android.material:material:1.0.0',
-            multidex            : 'androidx.multidex:multidex:2.0.0',
-            constraintLayout    : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            appcompat                       : 'androidx.appcompat:appcompat:1.0.0',
+            recyclerview                    : 'androidx.recyclerview:recyclerview:1.0.0',
+            material                        : 'com.google.android.material:material:1.0.0',
+            multidex                        : 'androidx.multidex:multidex:2.0.0',
+            constraintLayout                : 'androidx.constraintlayout:constraintlayout:1.1.3',
             //https://github.com/square/okhttp
-            okhttp3             : "com.squareup.okhttp3:okhttp:3.11.0",
+            okhttp3                         : "com.squareup.okhttp3:okhttp:3.11.0",
             //https://github.com/square/retrofit
-            retrofit2           : "com.squareup.retrofit2:retrofit:2.4.0",
-            gsonConverter       : "com.squareup.retrofit2:converter-gson:2.4.0",
-            rxAdapter           : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
+            retrofit2                       : "com.squareup.retrofit2:retrofit:2.4.0",
+            gsonConverter                   : "com.squareup.retrofit2:converter-gson:2.4.0",
+            rxAdapter                       : "com.squareup.retrofit2:adapter-rxjava2:2.4.0",
             //https://github.com/ReactiveX/RxJava
-            rxJava              : "io.reactivex.rxjava2:rxjava:2.1.12",
+            rxJava                          : "io.reactivex.rxjava2:rxjava:2.1.12",
             //https://github.com/ReactiveX/RxAndroid
-            rxAndroid           : "io.reactivex.rxjava2:rxandroid:2.0.2",
+            rxAndroid                       : "io.reactivex.rxjava2:rxandroid:2.0.2",
             // https://github.com/uber/AutoDispose
             Autodispose                     : 'com.uber.autodispose:autodispose:0.7.0',
             AutodisposeAndroid              : 'com.uber.autodispose:autodispose-android:0.7.0',
             AutodisposeAndroidArchcomponents: 'com.uber.autodispose:autodispose-android-archcomponents:0.7.0',
             // https://github.com/Meituan-Dianping/walle
-            walle               : 'com.meituan.android.walle:library:1.1.5',
-            eventbus            : 'org.greenrobot:eventbus:3.1.1',
+            walle                           : 'com.meituan.android.walle:library:1.1.5',
+            eventbus                        : 'org.greenrobot:eventbus:3.1.1',
             // https://github.com/orhanobut/logger
-            logger              : 'com.orhanobut:logger:2.2.0',
-            Gson                : "com.google.code.gson:gson:2.8.2",
+            logger                          : 'com.orhanobut:logger:2.2.0',
+            Gson                            : "com.google.code.gson:gson:2.8.2",
             //https://github.com/scwang90/SmartRefreshLayout
-            smartRefreshLayout        : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14',
+            smartRefreshLayout              : 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14',
             //https://github.com/facebook/fresco
             // https://www.fresco-cn.org/
             fresco                          : 'com.facebook.fresco:fresco:1.11.0',
@@ -98,11 +98,11 @@ ext {
             arouterApi                      : 'com.alibaba:arouter-api:1.4.1',
             arouterCompiler                 : 'com.alibaba:arouter-compiler:1.2.2',
             //https://github.com/lzyzsd/JsBridge
-            jsbridge        : "com.github.lzyzsd:jsbridge:1.0.4",
+            jsbridge                        : "com.github.lzyzsd:jsbridge:1.0.4",
             //https://github.com/bumptech/glide
-            glide           : 'com.github.bumptech.glide:glide:4.11.0',
-            glideComplier   : 'com.github.bumptech.glide:compiler:4.11.0',
-            glideTransform  : 'jp.wasabeef:glide-transformations:4.1.0',
+            glide                           : 'com.github.bumptech.glide:glide:4.11.0',
+            glideComplier                   : 'com.github.bumptech.glide:compiler:4.11.0',
+            glideTransform                  : 'jp.wasabeef:glide-transformations:4.1.0',
     ]
 
 }

@@ -1,8 +1,13 @@
 package com.credithc.baseapp.global;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,18 +26,234 @@ import io.reactivex.schedulers.Schedulers;
  */
 public class Test {
 
-    static int count = 5;
-
     public static void main(String[] args) {
-//        int[] array = new int[]{20, 19, 18, 17, 16, 15, 14, 13, 71, 12, -2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 56};
-//        new Thread() {
-//            @Override
-//            public void run() {
-//                quickSort(array, 0, array.length - 1);
-//                super.run();
-//            }
-//        }.start();
-//        System.out.println(String.format("The result of sort from small to large is %s", Arrays.toString(quickSort2(array, 0, array.length - 1))));
+
+    }
+
+    public static void testEvenNumber(IntGenerator intGenerator) {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        for (int i = 0; i < 10; i++) {
+            executorService.submit(new CheckTask(intGenerator));
+        }
+    }
+
+    static class CheckTask implements Runnable {
+        IntGenerator intGenerator;
+
+        public CheckTask(IntGenerator intGenerator) {
+            this.intGenerator = intGenerator;
+        }
+
+        @Override
+        public void run() {
+            int number;
+            while (number ==0){
+                try {
+                    number = intGenerator.next() % 2;
+                    System.out.println("number = " + number);
+                    Thread.sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    static abstract class IntGenerator {
+        protected volatile boolean cancel;
+        protected int number;
+
+        public void cancel() {
+            cancel = true;
+        }
+
+        public boolean isCancel() {
+            return cancel;
+        }
+
+        protected abstract int next();
+    }
+
+    static class EvenNumberGenerator extends IntGenerator {
+
+        @Override
+        protected int next() {
+            try {
+                synchronized (this) {
+                    ++number;
+                    ++number;
+                    if (number == 20) {
+                        throw new RuntimeException("Exception, number = 20");
+                    }
+                    return number;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return number;
+            } finally {
+                System.out.println("finally {}");
+            }
+        }
+    }
+
+    static volatile int meaAmount;
+
+    static class CookTask implements Runnable {
+        Cook cook;
+
+        public CookTask(Cook cook) {
+            this.cook = cook;
+        }
+
+        @Override
+        public void run() {
+            System.out.println(cook.getName() + " cook start ...");
+            while ((meaAmount = cook.cooking(meaAmount)) < 20) {
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    System.out.println("cooking meatAmount = " + meaAmount);
+                }
+            }
+            System.out.println(cook.getName() + " cook end ...");
+            System.out.println("------------------------------------");
+        }
+    }
+
+    static class EatTask implements Runnable {
+        Person person;
+        Thread cookingThread;
+
+        public EatTask(Person person, Thread cookingThread) {
+            this.person = person;
+            this.cookingThread = cookingThread;
+            cookingThread.start();
+        }
+
+        @Override
+        public void run() {
+            try {
+                cookingThread.join();
+                System.out.println(person.getName() + " eat start ...");
+                while (meaAmount > 0) {
+                    meaAmount = person.eatMeat(meaAmount);
+                    System.out.println(person.getName() + " eat meat, meatAmount = " + meaAmount);
+                    Thread.sleep(100);
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                System.out.println(person.getName() + " eat end ...");
+            }
+
+        }
+    }
+
+    static class Cook {
+        String name;
+
+        public Cook(String name) {
+            this.name = name;
+        }
+
+        int cooking(int meatCount) {
+            return ++meatCount;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    static class Person {
+        String name;
+
+        public Person(String name) {
+            this.name = name;
+        }
+
+        int eatMeat(int meatCount) {
+            return --meatCount;
+        }
+
+        public String getName() {
+            return name;
+        }
+    }
+
+    public static void testDaemonThread2() {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                int i = 901;
+                int count = 10;
+                while (true) {
+                    try {
+                        i = i / count--;
+                        TimeUnit.MILLISECONDS.sleep(100);
+                    } catch (Exception e) {
+                        System.out.println("Exception = " + e.getMessage());
+                    } finally {
+                        System.out.println("finally i = " + i);
+                    }
+                }
+            }
+        });
+        thread.setDaemon(false);
+        thread.start();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        thread.interrupt();
+    }
+
+    public static void testDaemonThread1() {
+        ExecutorService executorService = new ThreadPoolExecutor(2,
+                5,
+                5000,
+                TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<>(50), new DaemonThreadFactory());
+        for (int i = 0; i < 10; i++) {
+            executorService.submit(new FibonaciiRunnableCreator(10 + 2 * i));
+        }
+        executorService.shutdown();
+        try {
+            Thread.sleep(3200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        List<Runnable> runnableList = executorService.shutdownNow();
+        System.out.println("runnableList.size() = " + runnableList.size());
+    }
+
+    static class DaemonThreadFactory implements ThreadFactory {
+
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread thread = new Thread(r);
+            if (!thread.isDaemon()) {
+                thread.setDaemon(true);
+            }
+            return thread;
+        }
+    }
+
+    public static void testSort() {
+        System.out.println("Thread  = " + Thread.currentThread());
+        int[] array = new int[]{20, 19, 18, 17, 16, 15, 14, 13, 71, 12, -2, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 56};
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                quickSort2(array, 0, array.length - 1);
+                System.out.println(String.format("The result of sort from small to large is %s", Arrays.toString(array)));
+                System.out.println("Thread  = " + Thread.currentThread());
+            }
+        }.start();
     }
 
 
@@ -359,7 +580,6 @@ public class Test {
             executorService.submit(new FibonaciiRunnableCreator(10 + 2 * i));
         }
         executorService.shutdown();
-
     }
 
 }
