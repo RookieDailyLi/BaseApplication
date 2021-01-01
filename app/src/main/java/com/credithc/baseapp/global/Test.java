@@ -46,14 +46,9 @@ public class Test {
 
         @Override
         public void run() {
-            int number;
-            while (number ==0){
-                try {
-                    number = intGenerator.next() % 2;
-                    System.out.println("number = " + number);
-                    Thread.sleep(200);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+            while (!intGenerator.isCancel()) {
+                if (intGenerator.next() % 2 != 0) {
+                    intGenerator.cancel();
                 }
             }
         }
@@ -81,10 +76,9 @@ public class Test {
             try {
                 synchronized (this) {
                     ++number;
+                    Thread.yield();
                     ++number;
-                    if (number == 20) {
-                        throw new RuntimeException("Exception, number = 20");
-                    }
+                    System.out.println("number = " + number);
                     return number;
                 }
             } catch (Exception e) {
